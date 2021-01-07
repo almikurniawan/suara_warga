@@ -1,0 +1,54 @@
+CRITICAL - 2021-01-03 20:03:02 --> pg_query(): Query failed: ERROR:  relation &quot;slide&quot; does not exist
+LINE 2: FROM &quot;slide&quot;
+             ^
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp7\\htdoc...', 196, Array)
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\Postgre\Connection.php(196): pg_query(Resource id #184, 'SELECT *\nFROM "...')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseConnection.php(741): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1860): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 C:\xampp7\htdocs\apps\suara_warga\app\Models\Home_model.php(12): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Home.php(12): App\Models\home_model->get('slide')
+#7 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Home->index()
+#8 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2021-01-03 20:04:23 --> Undefined variable: slide
+#0 C:\xampp7\htdocs\apps\suara_warga\app\Views\frontend\home.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp7\\htdoc...', 11, Array)
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp7\\htdoc...')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('frontend/home', Array, true)
+#3 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Home.php(10): view('frontend/home')
+#4 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Home->index()
+#5 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2021-01-03 20:07:12 --> Invalid file: frontend/home.php
+#0 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('frontend/home.p...')
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('frontend/home', Array, true)
+#2 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Home.php(10): view('frontend/home')
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Home->index()
+#4 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-01-03 20:10:18 --> Invalid file: frontend/home.php
+#0 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('frontend/home.p...')
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('frontend/home', Array, true)
+#2 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Home.php(10): view('frontend/home')
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Home->index()
+#4 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-01-03 20:12:10 --> Class Home does not exist
+#0 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Debug\Toolbar\Collectors\Routes.php(107): ReflectionMethod->__construct('Home', '_remap')
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Debug\Toolbar\Collectors\BaseCollector.php(307): CodeIgniter\Debug\Toolbar\Collectors\Routes->display()
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Debug\Toolbar.php(128): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Debug\Toolbar.php(353): CodeIgniter\Debug\Toolbar->run(1609726330,7093, 0,034, Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+#4 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Filters\DebugToolbar.php(78): CodeIgniter\Debug\Toolbar->prepare(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+#5 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Filters\Filters.php(199): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), NULL)
+#6 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(422): CodeIgniter\Filters\Filters->run('', 'after')
+#7 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}

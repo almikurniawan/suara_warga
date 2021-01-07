@@ -1,0 +1,247 @@
+CRITICAL - 2021-01-05 01:36:37 --> Undefined property: CodeIgniter\View\View::$request
+#0 C:\xampp7\htdocs\apps\suara_warga\app\Views\frontend\laporan.php(16): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp7\\htdoc...', 16, Array)
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp7\\htdoc...')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('frontend/lapora...', Array, true)
+#3 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Laporan.php(25): view('frontend/lapora...', Array)
+#4 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Laporan->lapor()
+#5 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#6 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2021-01-05 01:42:00 --> syntax error, unexpected ']'
+#0 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Router\Router.php(195): CodeIgniter\Router\Router->autoRoute('laporan/lapor')
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(793): CodeIgniter\Router\Router->handle('laporan/lapor')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(364): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-01-05 01:42:06 --> syntax error, unexpected ']'
+#0 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Router\Router.php(195): CodeIgniter\Router\Router->autoRoute('laporan/lapor')
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(793): CodeIgniter\Router\Router->handle('laporan/lapor')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(364): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-01-05 01:43:01 --> syntax error, unexpected ']'
+#0 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Router\Router.php(195): CodeIgniter\Router\Router->autoRoute('laporan/lapor')
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(793): CodeIgniter\Router\Router->handle('laporan/lapor')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(364): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-01-05 01:43:05 --> syntax error, unexpected ']'
+#0 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Router\Router.php(195): CodeIgniter\Router\Router->autoRoute('laporan/lapor')
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(793): CodeIgniter\Router\Router->handle('laporan/lapor')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(364): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-01-05 01:43:07 --> syntax error, unexpected ']'
+#0 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Router\Router.php(195): CodeIgniter\Router\Router->autoRoute('laporan/lapor')
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(793): CodeIgniter\Router\Router->handle('laporan/lapor')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(364): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-01-05 01:43:07 --> syntax error, unexpected ']'
+#0 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Router\Router.php(195): CodeIgniter\Router\Router->autoRoute('laporan/lapor')
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(793): CodeIgniter\Router\Router->handle('laporan/lapor')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(364): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-01-05 01:44:17 --> syntax error, unexpected ']'
+#0 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Router\Router.php(195): CodeIgniter\Router\Router->autoRoute('laporan/lapor')
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(793): CodeIgniter\Router\Router->handle('laporan/lapor')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(364): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-01-05 01:48:51 --> pg_query(): Query failed: ERROR:  column &quot;nik&quot; of relation &quot;aduan&quot; does not exist
+LINE 1: INSERT INTO &quot;aduan&quot; (&quot;nik&quot;, &quot;nama&quot;, &quot;no_hp&quot;, &quot;laporan&quot;) VALU...
+                             ^
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp7\\htdoc...', 196, Array)
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\Postgre\Connection.php(196): pg_query(Resource id #187, 'INSERT INTO "ad...')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseConnection.php(741): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "ad...')
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "ad...')
+#4 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2249): CodeIgniter\Database\BaseConnection->query('INSERT INTO "ad...', Array, false)
+#5 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Laporan.php(33): CodeIgniter\Database\BaseBuilder->insert(Array)
+#6 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Laporan->lapor()
+#7 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#8 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2021-01-05 01:53:58 --> pg_query(): Query failed: ERROR:  relation &quot;pengajuan&quot; does not exist
+LINE 2: FROM &quot;pengajuan&quot;
+             ^
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp7\\htdoc...', 196, Array)
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\Postgre\Connection.php(196): pg_query(Resource id #178, 'SELECT *\nFROM "...')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseConnection.php(741): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2019): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Home.php(14): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#6 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Home->success('2')
+#7 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2021-01-05 01:57:00 --> Undefined variable: valuep
+#0 C:\xampp7\htdocs\apps\suara_warga\app\Views\frontend\pencarian_result.php(18): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp7\\htdoc...', 18, Array)
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp7\\htdoc...')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('frontend/pencar...', Array, true)
+#3 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Pencarian.php(22): view('frontend/pencar...', Array)
+#4 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Pencarian->list()
+#5 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pencarian))
+#6 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2021-01-05 02:07:37 --> Call to undefined method CodeIgniter\Database\Postgre\Builder::getRowArray()
+#0 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Pencarian->detail('1')
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pencarian))
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-05 02:10:44 --> Undefined variable: value
+#0 C:\xampp7\htdocs\apps\suara_warga\app\Views\frontend\pencarian_detail.php(18): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp7\\htdoc...', 18, Array)
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp7\\htdoc...')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('frontend/pencar...', Array, true)
+#3 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Pencarian.php(33): view('frontend/pencar...', Array)
+#4 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Pencarian->detail('1')
+#5 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pencarian))
+#6 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2021-01-05 02:10:49 --> Undefined index: status_label
+#0 C:\xampp7\htdocs\apps\suara_warga\app\Views\frontend\pencarian_detail.php(18): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp7\\htdoc...', 18, Array)
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp7\\htdoc...')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('frontend/pencar...', Array, true)
+#3 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Pencarian.php(33): view('frontend/pencar...', Array)
+#4 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Pencarian->detail('1')
+#5 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pencarian))
+#6 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2021-01-05 02:15:33 --> date_create() expects parameter 2 to be DateTimeZone, string given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'date_create() e...', 'C:\\xampp7\\htdoc...', 25, Array)
+#1 C:\xampp7\htdocs\apps\suara_warga\app\Views\frontend\pencarian_detail.php(25): date_create('2021-01-05 01:5...', 'd M Y')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp7\\htdoc...')
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('frontend/pencar...', Array, true)
+#4 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Pencarian.php(33): view('frontend/pencar...', Array)
+#5 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Pencarian->detail('1')
+#6 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pencarian))
+#7 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-05 06:49:18 --> pg_query(): Query failed: ERROR:  syntax error at or near &quot;selcet&quot;
+LINE 1: selcet *, aduan_id as id from aduan where aduan_status = 'tr...
+        ^
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp7\\htdoc...', 196, Array)
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\Postgre\Connection.php(196): pg_query(Resource id #181, 'selcet *, aduan...')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseConnection.php(741): CodeIgniter\Database\Postgre\Connection->execute('selcet *, aduan...')
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('selcet *, aduan...')
+#4 C:\xampp7\htdocs\apps\suara_warga\app\Libraries\SmartComponent\Datasource.php(73): CodeIgniter\Database\BaseConnection->query('selcet *, aduan...')
+#5 C:\xampp7\htdocs\apps\suara_warga\app\Libraries\SmartComponent\Grid.php(172): App\Libraries\SmartComponent\Datasource->run()
+#6 C:\xampp7\htdocs\apps\suara_warga\app\Libraries\SmartComponent\Grid.php(127): App\Libraries\SmartComponent\Grid->get_datasource()
+#7 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Admin\Aduan.php(42): App\Libraries\SmartComponent\Grid->output()
+#8 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Admin\Aduan->grid()
+#9 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Aduan))
+#10 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2021-01-05 06:49:18 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Format\Exceptions\FormatException.php:9
+Stack trace:
+#0 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Format\JSONFormatter.php(71): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\API\ResponseTrait.php(414): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\API\ResponseTrait.php(134): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Debug\Exceptions.php(168): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-01-05 06:49:30 --> pg_query(): Query failed: ERROR:  syntax error at or near &quot;selcet&quot;
+LINE 1: selcet *, aduan_id as id from aduan where aduan_status = 'tr...
+        ^
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp7\\htdoc...', 196, Array)
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\Postgre\Connection.php(196): pg_query(Resource id #181, 'selcet *, aduan...')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseConnection.php(741): CodeIgniter\Database\Postgre\Connection->execute('selcet *, aduan...')
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('selcet *, aduan...')
+#4 C:\xampp7\htdocs\apps\suara_warga\app\Libraries\SmartComponent\Datasource.php(73): CodeIgniter\Database\BaseConnection->query('selcet *, aduan...')
+#5 C:\xampp7\htdocs\apps\suara_warga\app\Libraries\SmartComponent\Grid.php(172): App\Libraries\SmartComponent\Datasource->run()
+#6 C:\xampp7\htdocs\apps\suara_warga\app\Libraries\SmartComponent\Grid.php(127): App\Libraries\SmartComponent\Grid->get_datasource()
+#7 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Admin\Aduan.php(42): App\Libraries\SmartComponent\Grid->output()
+#8 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Admin\Aduan->grid()
+#9 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Aduan))
+#10 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2021-01-05 06:49:30 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Format\Exceptions\FormatException.php:9
+Stack trace:
+#0 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Format\JSONFormatter.php(71): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\API\ResponseTrait.php(414): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\API\ResponseTrait.php(134): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Debug\Exceptions.php(168): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-01-05 06:49:42 --> pg_query(): Query failed: ERROR:  syntax error at or near &quot;selcet&quot;
+LINE 1: selcet *, aduan_id as id from aduan where aduan_status = 'tr...
+        ^
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp7\\htdoc...', 196, Array)
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\Postgre\Connection.php(196): pg_query(Resource id #181, 'selcet *, aduan...')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseConnection.php(741): CodeIgniter\Database\Postgre\Connection->execute('selcet *, aduan...')
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('selcet *, aduan...')
+#4 C:\xampp7\htdocs\apps\suara_warga\app\Libraries\SmartComponent\Datasource.php(73): CodeIgniter\Database\BaseConnection->query('selcet *, aduan...')
+#5 C:\xampp7\htdocs\apps\suara_warga\app\Libraries\SmartComponent\Grid.php(172): App\Libraries\SmartComponent\Datasource->run()
+#6 C:\xampp7\htdocs\apps\suara_warga\app\Libraries\SmartComponent\Grid.php(127): App\Libraries\SmartComponent\Grid->get_datasource()
+#7 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Admin\Aduan.php(42): App\Libraries\SmartComponent\Grid->output()
+#8 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Admin\Aduan->grid()
+#9 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Aduan))
+#10 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2021-01-05 06:49:42 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Format\Exceptions\FormatException.php:9
+Stack trace:
+#0 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Format\JSONFormatter.php(71): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\API\ResponseTrait.php(414): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\API\ResponseTrait.php(134): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Debug\Exceptions.php(168): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-01-05 06:50:04 --> pg_query(): Query failed: ERROR:  syntax error at or near &quot;selcet&quot;
+LINE 1: selcet *, aduan_id as id from aduan where aduan_status = 'tr...
+        ^
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp7\\htdoc...', 196, Array)
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\Postgre\Connection.php(196): pg_query(Resource id #181, 'selcet *, aduan...')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseConnection.php(741): CodeIgniter\Database\Postgre\Connection->execute('selcet *, aduan...')
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('selcet *, aduan...')
+#4 C:\xampp7\htdocs\apps\suara_warga\app\Libraries\SmartComponent\Datasource.php(73): CodeIgniter\Database\BaseConnection->query('selcet *, aduan...')
+#5 C:\xampp7\htdocs\apps\suara_warga\app\Libraries\SmartComponent\Grid.php(172): App\Libraries\SmartComponent\Datasource->run()
+#6 C:\xampp7\htdocs\apps\suara_warga\app\Libraries\SmartComponent\Grid.php(127): App\Libraries\SmartComponent\Grid->get_datasource()
+#7 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Admin\Aduan.php(42): App\Libraries\SmartComponent\Grid->output()
+#8 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Admin\Aduan->grid()
+#9 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Aduan))
+#10 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2021-01-05 06:50:17 --> pg_query(): Query failed: ERROR:  invalid input syntax for integer: &quot;true&quot;
+LINE 1: ...*, aduan_id as id from aduan where aduan_status = 'true' ord...
+                                                             ^
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp7\\htdoc...', 196, Array)
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\Postgre\Connection.php(196): pg_query(Resource id #181, 'select *, aduan...')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseConnection.php(741): CodeIgniter\Database\Postgre\Connection->execute('select *, aduan...')
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('select *, aduan...')
+#4 C:\xampp7\htdocs\apps\suara_warga\app\Libraries\SmartComponent\Datasource.php(73): CodeIgniter\Database\BaseConnection->query('select *, aduan...')
+#5 C:\xampp7\htdocs\apps\suara_warga\app\Libraries\SmartComponent\Grid.php(172): App\Libraries\SmartComponent\Datasource->run()
+#6 C:\xampp7\htdocs\apps\suara_warga\app\Libraries\SmartComponent\Grid.php(127): App\Libraries\SmartComponent\Grid->get_datasource()
+#7 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Admin\Aduan.php(42): App\Libraries\SmartComponent\Grid->output()
+#8 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Admin\Aduan->grid()
+#9 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Aduan))
+#10 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#12 {main}

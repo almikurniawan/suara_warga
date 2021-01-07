@@ -1,0 +1,15 @@
+CRITICAL - 2020-12-29 23:50:13 --> pg_query(): Query failed: ERROR:  column gallery.gallery_kategori_id does not exist
+LINE 3: ...ri&quot; ON &quot;gallery_kategori&quot;.&quot;gallery_kategori_id&quot; = &quot;gallery&quot;....
+                                                             ^
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp7\\htdoc...', 196, Array)
+#1 C:\xampp7\htdocs\apps\sidamis\vendor\codeigniter4\framework\system\Database\Postgre\Connection.php(196): pg_query(Resource id #184, 'SELECT *\nFROM "...')
+#2 C:\xampp7\htdocs\apps\sidamis\vendor\codeigniter4\framework\system\Database\BaseConnection.php(741): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 C:\xampp7\htdocs\apps\sidamis\vendor\codeigniter4\framework\system\Database\BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 C:\xampp7\htdocs\apps\sidamis\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1860): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 C:\xampp7\htdocs\apps\sidamis\app\Models\Home_model.php(26): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp7\htdocs\apps\sidamis\app\Controllers\Home.php(14): App\Models\home_model->get_gallery()
+#7 C:\xampp7\htdocs\apps\sidamis\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Home->index()
+#8 C:\xampp7\htdocs\apps\sidamis\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\xampp7\htdocs\apps\sidamis\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp7\htdocs\apps\sidamis\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#11 {main}

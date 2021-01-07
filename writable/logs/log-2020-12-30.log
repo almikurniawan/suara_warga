@@ -1,0 +1,37 @@
+CRITICAL - 2020-12-30 00:00:54 --> Undefined index: min
+#0 C:\xampp7\htdocs\apps\sidamis\app\Libraries\SmartComponent\Form.php(294): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp7\\htdoc...', 294, Array)
+#1 C:\xampp7\htdocs\apps\sidamis\app\Controllers\Admin\Tentang.php(136): App\Libraries\SmartComponent\Form->add('tentang_konten', 'Konten', 'slider', true, 'Profil', 'style="width:10...')
+#2 C:\xampp7\htdocs\apps\sidamis\app\Controllers\Admin\Tentang.php(111): App\Controllers\Admin\tentang->form('1')
+#3 C:\xampp7\htdocs\apps\sidamis\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Admin\tentang->edit('1', 'profil')
+#4 C:\xampp7\htdocs\apps\sidamis\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\tentang))
+#5 C:\xampp7\htdocs\apps\sidamis\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp7\htdocs\apps\sidamis\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-12-30 01:10:55 --> Undefined index: gallery_kategori
+#0 C:\xampp7\htdocs\apps\sidamis\app\Controllers\Admin\Gallery.php(139): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp7\\htdoc...', 139, Array)
+#1 C:\xampp7\htdocs\apps\sidamis\app\Controllers\Admin\Gallery.php(112): App\Controllers\Admin\Gallery->form('1')
+#2 C:\xampp7\htdocs\apps\sidamis\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Admin\Gallery->edit('1')
+#3 C:\xampp7\htdocs\apps\sidamis\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Gallery))
+#4 C:\xampp7\htdocs\apps\sidamis\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp7\htdocs\apps\sidamis\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-12-30 01:13:09 --> in_array() expects parameter 2 to be array, null given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'in_array() expe...', 'C:\\xampp7\\htdoc...', 290, Array)
+#1 C:\xampp7\htdocs\apps\sidamis\app\Libraries\SmartComponent\Form.php(290): in_array('1', NULL)
+#2 C:\xampp7\htdocs\apps\sidamis\app\Controllers\Admin\Gallery.php(141): App\Libraries\SmartComponent\Form->add('gallery_kategor...', 'Kategori galler...', 'select_multiple', false, NULL, ' style="width:1...', Array)
+#3 C:\xampp7\htdocs\apps\sidamis\app\Controllers\Admin\Gallery.php(112): App\Controllers\Admin\Gallery->form('1')
+#4 C:\xampp7\htdocs\apps\sidamis\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Admin\Gallery->edit('1')
+#5 C:\xampp7\htdocs\apps\sidamis\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Gallery))
+#6 C:\xampp7\htdocs\apps\sidamis\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp7\htdocs\apps\sidamis\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-12-30 01:14:00 --> html_entity_decode() expects parameter 1 to be string, array given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'html_entity_dec...', 'C:\\xampp7\\htdoc...', 441, Array)
+#1 C:\xampp7\htdocs\apps\sidamis\app\Libraries\SmartComponent\Form.php(441): html_entity_decode(Array)
+#2 C:\xampp7\htdocs\apps\sidamis\app\Controllers\Admin\Gallery.php(146): App\Libraries\SmartComponent\Form->get_data()
+#3 C:\xampp7\htdocs\apps\sidamis\app\Controllers\Admin\Gallery.php(112): App\Controllers\Admin\Gallery->form('1')
+#4 C:\xampp7\htdocs\apps\sidamis\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Admin\Gallery->edit('1')
+#5 C:\xampp7\htdocs\apps\sidamis\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Gallery))
+#6 C:\xampp7\htdocs\apps\sidamis\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp7\htdocs\apps\sidamis\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}

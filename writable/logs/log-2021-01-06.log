@@ -1,0 +1,80 @@
+CRITICAL - 2021-01-06 03:01:00 --> Undefined variable: title
+#0 C:\xampp7\htdocs\apps\suara_warga\app\Views\admin\aduan\detail.php(8): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp7\\htdoc...', 8, Array)
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp7\\htdoc...')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('admin/aduan/det...', Array, true)
+#3 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Admin\Aduan.php(71): view('admin/aduan/det...')
+#4 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Admin\Aduan->detail('4')
+#5 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Aduan))
+#6 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2021-01-06 03:05:31 --> Call to a member function getName() on null
+#0 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Laporan->lapor()
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-06 03:06:17 --> pg_query(): Query failed: ERROR:  syntax error at end of input
+LINE 1: .../b&gt; : '||aduan_nik as pelapor from aduan where aduan_id = ? 
+                                                                       ^
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp7\\htdoc...', 196, Array)
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\Postgre\Connection.php(196): pg_query(Resource id #179, 'select *, aduan...')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseConnection.php(741): CodeIgniter\Database\Postgre\Connection->execute('select *, aduan...')
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('select *, aduan...')
+#4 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Admin\Aduan.php(78): CodeIgniter\Database\BaseConnection->query('select *, aduan...', Array)
+#5 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Admin\Aduan.php(72): App\Controllers\Admin\Aduan->resume('5')
+#6 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Admin\Aduan->detail('5')
+#7 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Aduan))
+#8 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2021-01-06 03:06:22 --> Call to a member function getName() on null
+#0 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Laporan->lapor()
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-06 03:06:36 --> Object of class App\Libraries\SmartComponent\Form could not be converted to string
+#0 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\View\View.php(246): include()
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('admin/aduan/det...', Array, true)
+#2 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Admin\Aduan.php(73): view('admin/aduan/det...', Array)
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Admin\Aduan->detail('4')
+#4 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Aduan))
+#5 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-01-06 03:06:39 --> Object of class App\Libraries\SmartComponent\Form could not be converted to string
+#0 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\View\View.php(246): include()
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('admin/aduan/det...', Array, true)
+#2 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Admin\Aduan.php(73): view('admin/aduan/det...', Array)
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Admin\Aduan->detail('4')
+#4 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Aduan))
+#5 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-01-06 03:06:42 --> Call to a member function getName() on null
+#0 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Laporan->lapor()
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-06 03:07:12 --> Call to a member function getName() on null
+#0 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Laporan->lapor()
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-06 03:10:08 --> pg_query(): Query failed: ERROR:  column &quot;aduan_file_aduan_id&quot; of relation &quot;aduan_history&quot; does not exist
+LINE 1: INSERT INTO &quot;aduan_history&quot; (&quot;aduan_file_aduan_id&quot;, &quot;aduan_f...
+                                     ^
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp7\\htdoc...', 196, Array)
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\Postgre\Connection.php(196): pg_query(Resource id #187, 'INSERT INTO "ad...')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseConnection.php(741): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "ad...')
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "ad...')
+#4 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2249): CodeIgniter\Database\BaseConnection->query('INSERT INTO "ad...', Array, false)
+#5 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Laporan.php(47): CodeIgniter\Database\BaseBuilder->insert(Array)
+#6 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Laporan->lapor()
+#7 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#8 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}

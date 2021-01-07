@@ -1,0 +1,41 @@
+CRITICAL - 2021-01-01 22:12:30 --> pg_query(): Query failed: ERROR:  relation &quot;slide&quot; does not exist
+LINE 2: FROM &quot;slide&quot;
+             ^
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp7\\htdoc...', 196, Array)
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\Postgre\Connection.php(196): pg_query(Resource id #184, 'SELECT *\nFROM "...')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseConnection.php(741): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1860): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 C:\xampp7\htdocs\apps\suara_warga\app\Models\Home_model.php(12): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Home.php(12): App\Models\home_model->get('slide')
+#7 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Home->index()
+#8 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2021-01-01 22:12:44 --> pg_query(): Query failed: ERROR:  relation &quot;ref_kecamatan&quot; does not exist
+LINE 1: select kec_kode as id, kec_label as label from ref_kecamatan...
+                                                       ^
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp7\\htdoc...', 196, Array)
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\Postgre\Connection.php(196): pg_query(Resource id #180, 'select kec_kode...')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseConnection.php(741): CodeIgniter\Database\Postgre\Connection->execute('select kec_kode...')
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Database\BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('select kec_kode...')
+#4 C:\xampp7\htdocs\apps\suara_warga\app\Libraries\SmartComponent\Form.php(189): CodeIgniter\Database\BaseConnection->query('select kec_kode...')
+#5 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Admin\Home.php(247): App\Libraries\SmartComponent\Form->add('kecamatan', 'Kecamatan', 'select', false, NULL, 'style="width:10...', Array)
+#6 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Admin\Home.php(13): App\Controllers\Admin\Home->searchMiskin()
+#7 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Admin\Home->index()
+#8 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Home))
+#9 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2021-01-01 22:13:03 --> Undefined index: user_namalengkap
+#0 C:\xampp7\htdocs\apps\suara_warga\app\Views\template\default.php(114): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp7\\htdoc...', 114, Array)
+#1 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\xampp7\\htdoc...')
+#2 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\View\View.php(257): CodeIgniter\View\View->render('template/defaul...', Array, true)
+#3 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('global/list', Array, true)
+#4 C:\xampp7\htdocs\apps\suara_warga\app\Controllers\Admin\Karyawan.php(18): view('global/list', Array)
+#5 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Admin\Karyawan->index()
+#6 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Karyawan))
+#7 C:\xampp7\htdocs\apps\suara_warga\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp7\htdocs\apps\suara_warga\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
