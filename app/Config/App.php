@@ -21,7 +21,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://localhost/apps/suara_warga/public/';
+	public $baseURL = 'http://halomasbup.herokuapp.com/public/';
 
 	/*
 	|--------------------------------------------------------------------------
