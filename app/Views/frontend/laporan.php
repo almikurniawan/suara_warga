@@ -41,9 +41,9 @@ $this->section('content')
                 <?php } ?>
             </div>
             <div class="file-field input-field  col s12">
-                <input type="file" name="files">
+                <input type="file" name="files[]" multiple>
                 <div class="file-path-wrapper">
-                    <input class="file-path white-text" name="files" type="text" placeholder="Upload files">
+                    <input class="file-path white-text" name="files[]" type="text" placeholder="Upload files">
                 </div>
             </div>
             <button class="waves-effect waves-light btn right-align" type="submit">Kirim Laporan<i class="material-icons left">send</i></button>

@@ -81,7 +81,7 @@ class Datasource
         return array(
             'total'     => (int)$total['total'],
             'result'    => $data,
-            // 'sql'       => $this->SQL
+            'sql'       => $this->SQL
         );
     }
 }

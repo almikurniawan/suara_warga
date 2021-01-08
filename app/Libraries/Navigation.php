@@ -80,6 +80,11 @@ class Navigation
                 'controller'    => 'admin/aduan',
                 'icon'          => 'fa-home',
             ),
+            // array(
+            //     'label'         => 'Aduan Dinas',
+            //     'controller'    => 'admin/aduanDinas',
+            //     'icon'          => 'fa-home',
+            // ),
             array(
                 'label'         => 'Data Master',
                 'controller'    => '#master',
@@ -88,6 +93,11 @@ class Navigation
                     array(
                         'label'     => 'Karyawan',
                         'controller' => 'admin/karyawan',
+                        'icon'          => 'fa-home',
+                    ),
+                    array(
+                        'label'     => 'Dinas',
+                        'controller' => 'admin/dinas',
                         'icon'          => 'fa-home',
                     ),
                 )

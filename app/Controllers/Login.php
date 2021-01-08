@@ -22,7 +22,7 @@ class Login extends BaseController
 		}
 		if (!empty($data)) {
 			$this->session->set('user', $data);
-			return redirect()->to(base_url("admin/karyawan"));
+			return redirect()->to(base_url("admin/aduan"));
 		} else {
 			$this->session->setFlashdata('warning', 'Login Gagal !');
 			return redirect()->to(base_url("login"));

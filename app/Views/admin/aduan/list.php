@@ -38,8 +38,8 @@
     function detail(id){
         $("#dialog").kendoWindow({
             content: '<?= base_url("admin/aduan/detail")?>/'+id,
-            width: "800px",
-            height: "400px",
+            width: "900px",
+            height: "500px",
             // modal: true,
             iframe: true,
             title: "Detail Aduan",

@@ -117,14 +117,12 @@ class AksesUser extends BaseController
                 'group' => array(),
                 'user_name' => '',
                 'user_password' => '',
-                'user_namalengkap' => '',
             );
             $group = array();
         }
 
         $form = new Form();
         $form->set_attribute_form('class="form-horizontal"')->set_form_action(base_url(('admin/aksesUser/form/' . $id)))
-            ->add('user_namalengkap', 'Nama Lengkap', 'text', true, ($data) ? $data['user_namalengkap'] : '', 'style="width:100%;"')
             ->add('user_name', 'Username', 'text', true, ($data) ? $data['user_name'] : '', 'style="width:100%;"')
             ->add('user_password', 'Password', 'password', false, '', 'style="width:100%;"')
             ->add('ref_user_akses_group_id', 'Nama Group', 'select_multiple', true, ($data) ? $group : '', ' style="width:100%;"', array(
@@ -134,7 +132,6 @@ class AksesUser extends BaseController
             ));
         if ($form->formVerified()) {
             $data_insert = array(
-                'user_namalengkap'    => $this->request->getPost('user_namalengkap'),
                 'user_name'    => $this->request->getPost('user_name'),
                 // 'user_password'    => sha1($this->request->getPost('user_password')),
             );

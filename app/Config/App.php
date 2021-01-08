@@ -21,7 +21,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://192.168.9.44/apps/suara_warga/public/';
+	public $baseURL = 'http://localhost/apps/suara_warga/public/';
 
 	/*
 	|--------------------------------------------------------------------------

@@ -36,16 +36,16 @@ class Laporan extends BaseController
                 'aduan_date'    => date("Y-m-d")
             ));
             $id = $this->db->insertID();
-            $file = $this->request->getFile('files');
-            if ($file->getName() != '') {
-                $ext = $file->getClientExtension();
-                $name = $file->getName();
-                $name = $file->getRandomName() . "." . $ext;
-                if ($file->move('./uploads/', $name)) {
-                    $this->db->table("aduan_file")->insert([
-                        'aduan_file_aduan_id'=> $id,
-                        'aduan_file_url' => $name
-                    ]);
+            $files = $this->request->getFiles();
+            foreach ($files['files'] as $key => $file) {
+                if ($file->getName() != '') {
+                    $name = $file->getRandomName();
+                    if ($file->move('./uploads/', $name)) {
+                        $this->db->table("aduan_file")->insert([
+                            'aduan_file_aduan_id'=> $id,
+                            'aduan_file_url' => $name
+                        ]);
+                    }
                 }
             }
             $this->db->table("aduan_history")->insert([

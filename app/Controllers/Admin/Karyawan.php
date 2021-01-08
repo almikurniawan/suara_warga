@@ -24,7 +24,8 @@ class Karyawan extends BaseController
                     kar_id as id,
                     *
                 FROM
-                    karyawan";
+                    karyawan
+                    left join ref_dinas on dinas_id = kar_dinas_id";
 
         $action['edit']     = array(
             'link'          => 'admin/karyawan/edit/'
@@ -50,6 +51,10 @@ class Karyawan extends BaseController
                         array(
                             'field' => 'kar_nip',
                             'title' => 'NIP',
+                        ),
+                        array(
+                            'field' => 'dinas_nama',
+                            'title' => 'Dinas',
                         ),
                         array(
                             'field' => 'kar_pangkat',
@@ -117,6 +122,11 @@ class Karyawan extends BaseController
 
         $form = new Form();
         $form->set_attribute_form('class="form-horizontal"')
+            ->add('kar_dinas_id', 'Dinas', 'select', true, !empty($data) ? $data['kar_dinas_id'] : '', 'style="width:100%;"',array(
+                'table' => 'ref_dinas',
+                'id' => 'dinas_id',
+                'label' => 'dinas_nama',
+            ))
             ->add('kar_nama', 'Nama Lengkap', 'text', true, !empty($data) ? $data['kar_nama'] : '', 'style="width:100%;"')
             ->add('kar_nip', 'NIP', 'text', true, !empty($data) ? $data['kar_nip'] : '', 'style="width:100%;"')
             ->add('kar_pangkat', 'Pangkat', 'text', true, !empty($data) ? $data['kar_pangkat'] : '', 'style="width:100%;"')
@@ -127,6 +137,7 @@ class Karyawan extends BaseController
         if ($form->formVerified()) {
             if ($id != null) {
                 $karyawan_update = array(
+                    'kar_dinas_id'  => $this->request->getPost('kar_dinas_id'),
                     'kar_nama'  => $this->request->getPost('kar_nama'),
                     'kar_nip'   => $this->request->getPost('kar_nip'),
                     'kar_pangkat'   => $this->request->getPost('kar_pangkat'),
@@ -144,7 +155,6 @@ class Karyawan extends BaseController
                 $user_update = array(
                     'user_name'         => $this->request->getPost('user_name'),
                     'user_kar_id'     => $id,
-                    'user_namalengkap'     => $this->request->getPost('kar_nama'),
                     'user_created_at'    => 'now()'
                 );
                 if ($this->request->getPost('user_password') != '') {
@@ -156,6 +166,7 @@ class Karyawan extends BaseController
                 die(forceRedirect(base_url('/admin/karyawan/edit/' . $id)));
             } else {
                 $karyawan_update = array(
+                    'kar_dinas_id'  => $this->request->getPost('kar_dinas_id'),
                     'kar_nama'  => $this->request->getPost('kar_nama'),
                     'kar_nip'   => $this->request->getPost('kar_nip'),
                     'kar_pangkat'   => $this->request->getPost('kar_pangkat'),
@@ -175,7 +186,6 @@ class Karyawan extends BaseController
                 $user_insert = array(
                     'user_name'         => $this->request->getPost('user_name'),
                     'user_kar_id'     => $id,
-                    'user_namalengkap'     => $this->request->getPost('kar_nama'),
                     'user_created_at'    => 'now()'
                 );
                 if ($this->request->getPost('user_password') != '') {
