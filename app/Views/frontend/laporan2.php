@@ -26,7 +26,9 @@ $this->section('content')
                             </div>
                         </div>
                         <button class="waves-effect waves-light btn right-align" type="submit" style="margin-top: 10px;">Tambah lampiran<i class="material-icons left">send</i></button>
-                        <a href="<?= base_url('home/success/' . $id_lap) ?>" class="waves-effect waves-light blue btn right-align" type="button" style="margin-top: 10px;">Lewati<i class="material-icons left"></i></a>
+                        <a href="<?= base_url('home/success/' . $id_lap) ?>" class="waves-effect waves-light blue btn right-align" type="button" style="margin-top: 10px;">
+                            Lewati <i class="material-icons left">clear</i>
+                        </a>
                     </form>
                 </div>
             </div>
