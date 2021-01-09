@@ -25,8 +25,8 @@ $this->section('content')
                                 <input class="file-path" name="files[]" type="text" placeholder="Upload files">
                             </div>
                         </div>
-                        <button class="waves-effect waves-light btn right-align" type="submit">Tambah lampiran<i class="material-icons left">send</i></button>
-                        <a href="<?= base_url('home/success/' . $id_lap) ?>" class="waves-effect waves-light blue btn right-align" type="button">Lewati<i class="material-icons left"></i></a>
+                        <button class="waves-effect waves-light btn right-align" type="submit" style="margin-top: 10px;">Tambah lampiran<i class="material-icons left">send</i></button>
+                        <a href="<?= base_url('home/success/' . $id_lap) ?>" class="waves-effect waves-light blue btn right-align" type="button" style="margin-top: 10px;">Lewati<i class="material-icons left"></i></a>
                     </form>
                 </div>
             </div>
