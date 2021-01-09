@@ -18,7 +18,7 @@
     </div>
     <div class="row">
         <div class="col s12 center-align">
-            <a href="https://api.whatsapp.com/send?phone=08563131301" class="btn waves-effect green" type="button" name="action">LAPORAN MELALUI WHATSAPP
+            <a href="https://bit.ly/lapor_masbup" class="btn waves-effect green" type="button" name="action">LAPORAN MELALUI WHATSAPP
                 <i class="material-icons left">report_problem</i>
             </a>
         </div>
