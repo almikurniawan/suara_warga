@@ -22,7 +22,7 @@ $this->section('content')
                         <div class="file-field input-field  col s12">
                             <input type="file" name="files[]" multiple>
                             <div class="file-path-wrapper">
-                                <input class="file-path" name="files[]" type="text" placeholder="Upload files">
+                                <input class="file-path" name="files[]" type="text" placeholder="Unggah Foto">
                             </div>
                         </div>
                         <button class="waves-effect waves-light btn right-align" type="submit" style="margin-top: 10px;">Tambah lampiran<i class="material-icons left">send</i></button>
