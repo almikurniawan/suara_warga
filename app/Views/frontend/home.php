@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col s12 center-align">
             <a href="<?= base_url('laporan') ?>" class="btn waves-effect blue" type="button" name="action">LAPORAN MELALUI APLIKASI
-                <i class="material-icons left">report_problem</i>
+                <i class="material-icons left">assignment</i>
             </a>
         </div>
     </div>
