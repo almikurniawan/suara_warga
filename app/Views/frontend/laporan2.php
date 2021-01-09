@@ -7,7 +7,7 @@ $this->section('content')
 <div class="red accent-4" style="height: 100vh;">
     <div class="row">
         <div class="col s12 m4 offset-m4 center-align white-text">
-            <H5><b>LAPORAN MASYARAKAT MELALUI APLIKASI</b></H5>
+            <H5><b>LAPORAN MASYARAKAT <br> MELALUI APLIKASI</b></H5>
             <div class="center-align valign-wrapper">
                 <i class="material-icons center-align">looks_two</i>
                 Lampiran (Foto/Dokumen) Pendukung
