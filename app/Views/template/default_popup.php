@@ -38,9 +38,9 @@ $session = service('session');
 </head>
 
 <body>
-	<!-- <nav class="navbar navbar-light bg-primary">
+	<nav class="navbar navbar-light bg-primary">
 		<a class="navbar-brand text-white"><?= $this->renderSection('title') ?></a>
-	</nav> -->
+	</nav>
 	<div class="container-fluid mt-5">
 		<?= $this->renderSection('content') ?>
 	</div>

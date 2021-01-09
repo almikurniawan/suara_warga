@@ -12,17 +12,25 @@
         span.badge{
             margin-left: 0px;
         }
+        nav .sidenav-trigger i {
+            height: 25px;
+            line-height: 25px;
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
     <nav>
         <div class="nav-wrapper white">
-            <a href="#" class="brand-logo left" style="font-size: 20px;"><img src="<?= base_url()?>/assets/images/halomasbup.png" alt="Girl in a jacket" height="55">
+            <a href="<?= base_url()?>" class="brand-logo left" style="font-size: 20px;"><img src="<?= base_url()?>/assets/images/halomasbup.png" alt="Girl in a jacket" height="55">
             </a>
             <ul id="slide-out" class="sidenav">
                 <li><a class="sidenav-close" href="<?= base_url("pencarian")?>">Pencarian Laporan</a></li>
             </ul>
-            <a href="#" data-target="slide-out" class="sidenav-trigger right" ><i class="material-icons red red accent-4">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a class="grey-text darken-4" href="<?= base_url("pencarian")?>">Pencarian Laporan</a></li>
+            </ul>
+            <a href="#" data-target="slide-out" class="sidenav-trigger right" ><i class="material-icons red-text accent-4">menu</i></a>
         </div>
     </nav>
     <?php

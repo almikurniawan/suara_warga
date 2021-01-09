@@ -76,15 +76,20 @@ class Navigation
     {
         $list_menu = array(
             array(
-                'label'         => 'Aduan',
+                'label'         => 'TIM Validasi',
                 'controller'    => 'admin/aduan',
                 'icon'          => 'fa-home',
             ),
-            // array(
-            //     'label'         => 'Aduan Dinas',
-            //     'controller'    => 'admin/aduanDinas',
-            //     'icon'          => 'fa-home',
-            // ),
+            array(
+                'label'         => 'Ketua TIM',
+                'controller'    => 'admin/ketuaTim',
+                'icon'          => 'fa-home',
+            ),
+            array(
+                'label'         => 'Dinas',
+                'controller'    => 'admin/aduanDinas',
+                'icon'          => 'fa-home',
+            ),
             array(
                 'label'         => 'Data Master',
                 'controller'    => '#master',
