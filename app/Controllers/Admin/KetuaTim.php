@@ -10,7 +10,7 @@ class KetuaTim extends BaseController
     public function index()
     {
         $data['content']   = $this->grid();
-        $data['title']  = 'Aduan Masuk';
+        $data['title']  = 'Aduan Ditinjau';
 
         return view('admin/ketuatim/list', $data);
     }

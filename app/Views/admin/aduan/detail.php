@@ -15,4 +15,9 @@
         </div>
     </div>
 </div>
+<script>
+function wa(phone){
+    window.open('https://wa.me/'+phone);
+}
+</script>
 <?= $this->endSection() ?>

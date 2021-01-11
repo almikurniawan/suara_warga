@@ -1,7 +1,4 @@
-<?= $this->extend('template/default_popup') ?>
-<?= $this->section('title') ?>
-<?= $title?>
-<?= $this->endSection() ?>
+<?= $this->extend('template/default') ?>
 <?= $this->section('content') ?>
 <div class="row">
     <div class="col-sm-12">

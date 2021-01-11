@@ -194,6 +194,27 @@ class Form{
 
             $field = '<select name="'.$name.'" id="'.$name.'" '.$extraAttribute.'>'.$option.'</select><script type="text/javascript">$(document).ready(function(){$("#'.$name.'").kendoComboBox({placeholder: "Please select", delay: 50, filter:"contains", suggest:false });});</script>';
         }
+        else if($type=='radio'){
+            $option     = "";
+            $where      = '  ';
+            if(isset($attribute_select['where'])){
+                $where .= ' where ' . $attribute_select['where'];
+            }
+
+            $order_by   = '';
+            if(isset($attribute_select['sort'])){
+                $order_by .= ' order by ' . $attribute_select['sort'];
+            }
+
+            $data = $this->db->query("select ".$attribute_select['id']." as id, ".$attribute_select['label']." as label from ".$attribute_select['table'] . $where . $order_by)->getResult('array');
+            foreach ($data as $key => $v) {
+                $selected = ($value==$v['id']) ? 'checked="checked"' : "";
+                $option .= '<br/><input type="radio" id="'.$v['id'].'" name="'.$name.'" value="'.$v['id'].'">
+                <label for="male">'.$v['label'].'</label><br/>';
+            }
+
+            $field = $option;
+        }
         else if($type=='select_rbi'){
             $cascade = '';
             foreach ($attribute_select['cascade'] as $key => $v) {

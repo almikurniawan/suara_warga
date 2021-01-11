@@ -87,7 +87,7 @@ class Aduan extends BaseController
         $resume = $form->set_resume(true)
             ->add('aduan_pesan', 'Aduan Pesan', 'textArea', false, $data_aduan['aduan_pesan'], 'style="width:100%;" ')
             ->add('aduan_nama', 'Nama', 'text', false, $data_aduan['aduan_nama'], 'style="width:100%;" ')
-            ->add('aduan_telp', 'Telp', 'text', false, $data_aduan['aduan_telp'], 'style="width:100%;" ')
+            ->add('aduan_telp', 'Telp', 'text', false, '<span style="cursor:pointer;" onclick="wa(\''.$data_aduan['aduan_telp'].'\')" class="badge badge-primary">'.$data_aduan['aduan_telp'].'</span>', 'style="width:100%;" ')
             ->add('aduan_nik', 'NIK', 'text', false, $data_aduan['aduan_nik'], 'style="width:100%;" ')
             ->add('aduan_created_at', 'Dilaporkan Pada', 'text', false, $data_aduan['aduan_created_at'], 'style="width:100%;" ')
             ->output();
@@ -114,14 +114,20 @@ class Aduan extends BaseController
         $form = new Form();
         $form->set_submit_label("Validasi")
             ->set_submit_icon("k-icon k-i-check")
-            ->add('aduan_valid_note', 'Catatan', 'textArea', true, '', 'style="width:100%;" rows="10"');
+            ->add('aduan_valid_note', 'Catatan', 'textArea', true, '', 'style="width:100%;" rows="10"')
+            ->add('aduan_valid_kewenangan', 'Kewenangan', 'radio', true, '', 'style="width:100%;" rows="10"',[
+                'table' => 'ref_kewenangan',
+                'id'    => 'ref_kew_id',
+                'label' => 'ref_kew_label'
+            ]);
         if($form->formVerified()){
             $form_data = array(
                 'aduan_status'=> 2,
                 'aduan_valid'=> true,
                 'aduan_valid_at'=> date("Y-m-d H:i:s"),
                 'aduan_valid_by'=> $this->user['user_id'],
-                'aduan_valid_note'=> nl2br($this->request->getPost('aduan_valid_note'))
+                'aduan_valid_note'=> nl2br($this->request->getPost('aduan_valid_note')),
+                'aduan_valid_kewenangan'=> $this->request->getPost('aduan_valid_kewenangan')
             );
             $this->db->table("aduan")->where(['aduan_id'=>$aduan_id])->update($form_data);
             $this->db->table("aduan_history")->where(['history_aduan_id'=> $aduan_id, 'history_status'=> 2])->update([

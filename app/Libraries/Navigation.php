@@ -76,17 +76,22 @@ class Navigation
     {
         $list_menu = array(
             array(
-                'label'         => 'TIM Validasi',
+                'label'         => 'Laporan Masuk',
                 'controller'    => 'admin/aduan',
                 'icon'          => 'fa-home',
             ),
             array(
-                'label'         => 'Ketua TIM',
+                'label'         => 'Ditinjau',
                 'controller'    => 'admin/ketuaTim',
                 'icon'          => 'fa-home',
             ),
             array(
-                'label'         => 'Dinas',
+                'label'         => 'Eksekusi',
+                'controller'    => 'admin/aduanDinas',
+                'icon'          => 'fa-home',
+            ),
+            array(
+                'label'         => 'Selesai',
                 'controller'    => 'admin/aduanDinas',
                 'icon'          => 'fa-home',
             ),
