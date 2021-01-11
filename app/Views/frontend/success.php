@@ -3,7 +3,7 @@
 <div class="red accent-4 white-text" style="height: 100vh;">
     <div class="row">
         <div class="col s12 center-align">
-            <h6><b>Aduan anda berhasil dikirimkan. Tunggu tanggapannya</h6>
+            <h6><b>Aduan anda berhasil dikirimkan. <br> Pantau Terus Progres Laporan Kamu di menu Cek Laporan.</h6>
         </div>
     </div>
     <div class="row">
