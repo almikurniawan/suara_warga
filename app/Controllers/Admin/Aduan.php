@@ -60,6 +60,57 @@ class Aduan extends BaseController
             )->output();
     }
 
+    public function ditinjau()
+    {
+        $data['content']   = $this->gridTinjau();
+        $data['title']  = 'Aduan Ditinjau';
+        return view('admin/aduan/list', $data);
+    }
+
+    public function gridTinjau()
+    {
+        $SQL = "select *, aduan_id as id from aduan";
+
+        $action['detail']     = array(
+            'link'          => 'admin/aduan/detail/'
+        );
+
+        $grid = new Grid();
+        return $grid->set_query($SQL,[
+            ['aduan_status', 2, '=']
+        ])
+            ->set_sort(array('id', 'desc'))
+            ->configure(
+                array(
+                    'datasouce_url' => base_url("admin/aduan/gridTinjau?datasource&" . get_query_string()),
+                    'grid_columns'  => array(
+                        array(
+                            'field' => 'aduan_nama',
+                            'title' => 'Pelapor',
+                        ),
+                        array(
+                            'field' => 'aduan_telp',
+                            'title' => 'Telp',
+                        ),
+                        array(
+                            'field' => 'aduan_nik',
+                            'title' => 'NIK',
+                        ),
+                        array(
+                            'field' => 'aduan_pesan',
+                            'title' => 'Pesan',
+                        ),
+                        array(
+                            'field' => 'aduan_created_at',
+                            'title' => 'Pada',
+                            'format'=> 'datetime'
+                        ),
+
+                    ),
+                )
+            )->output();
+    }
+
     private function search()
     {
         $form = new Form();
@@ -104,16 +155,20 @@ class Aduan extends BaseController
 
     public function valid($aduan_id)
     {
-        $data['title'] = "Validasi Aduan";
         $data['content'] = $this->form_valid($aduan_id);
         return view('admin/aduan/valid', $data);
     }
 
     public function form_valid($aduan_id)
     {
+        $aduan = $this->db->table('aduan')->where(['aduan_id'=> $aduan_id])->get()->getRowArray();
         $form = new Form();
-        $form->set_submit_label("Validasi")
-            ->set_submit_icon("k-icon k-i-check")
+        $form->set_submit_label("Next")
+            ->set_submit_icon("k-icon k-i-arrow-right")
+            ->set_resume(true)
+            ->add('aduan_pesan', 'Pesan', 'textArea', false, $aduan['aduan_pesan'], 'style="width:100%;" rows="10"')
+            ->set_resume(false)
+            ->add('aduan_valid_judul', 'Judul Aduan', 'text', true, '', 'style="width:100%;" rows="10"')
             ->add('aduan_valid_note', 'Catatan', 'textArea', true, '', 'style="width:100%;" rows="10"')
             ->add('aduan_valid_kewenangan', 'Kewenangan', 'radio', true, '', 'style="width:100%;" rows="10"',[
                 'table' => 'ref_kewenangan',
@@ -122,14 +177,100 @@ class Aduan extends BaseController
             ]);
         if($form->formVerified()){
             $form_data = array(
+                'aduan_valid_note'=> nl2br($this->request->getPost('aduan_valid_note')),
+                'aduan_valid_kewenangan'=> $this->request->getPost('aduan_valid_kewenangan'),
+                'aduan_valid_judul'=> $this->request->getPost('aduan_valid_judul'),
+            );
+            $this->db->table("aduan")->where(['aduan_id'=>$aduan_id])->update($form_data);
+            die(forceRedirect(base_url('/admin/aduan/validStep2/'.$aduan_id)));
+        }else{
+            return $form->output();
+        }
+    }
+
+    public function validStep2($aduan_id)
+    {
+        $aduan = $this->db->table('aduan')->where(['aduan_id'=> $aduan_id])->get()->getRowArray();
+        if($aduan['aduan_valid_kewenangan']==3){
+            $data['content'] = $this->form_valid_step2_provinsi($aduan, $aduan_id);
+        }else{
+            $data['content'] = $this->form_valid_step2($aduan, $aduan_id);
+        }
+        return view('admin/aduan/valid_step2', $data);
+    }
+
+    public function form_valid_step2($aduan, $aduan_id)
+    {
+        $form = new Form();
+        $form->set_submit_label("Simpan")
+            ->set_submit_icon("k-icon k-i-save")
+            ->set_resume(true)
+            ->add('aduan_pesan', 'Pesan', 'textArea', false, $aduan['aduan_pesan'], 'style="width:100%;" rows="10"')
+            ->add('aduan_valid_kewenangan', 'Kewenangan', 'select', false, $aduan['aduan_valid_kewenangan'], 'style="width:100%;"',[
+                'table'=> 'ref_kewenangan',
+                'id'=> 'ref_kew_id',
+                'label'=> 'ref_kew_label'
+            ])
+            ->set_resume(false)
+            ->add('dinas', 'Dinas yang berwenang', 'select_multiple', true, [], 'style="width:100%;" ', array(
+                'table' => 'ref_dinas',
+                'id'    => 'dinas_id',
+                'label' => 'dinas_nama'
+            ))
+            ->add('aduan_valid_koordinasi', 'Koordinasi Dengan', 'text', true, '', 'style="width:100%;" rows="10"')
+            ->add('aduan_valid_jenis_bantuan', 'Jenis Eksekusi Bantuan', 'text', true, '', 'style="width:100%;" rows="10"');
+        if($form->formVerified()){
+            $dinas = $this->request->getPost('dinas');
+            $this->db->table("aduan")->where(['aduan_id'=> $aduan_id])->update([
                 'aduan_status'=> 2,
                 'aduan_valid'=> true,
                 'aduan_valid_at'=> date("Y-m-d H:i:s"),
                 'aduan_valid_by'=> $this->user['user_id'],
-                'aduan_valid_note'=> nl2br($this->request->getPost('aduan_valid_note')),
-                'aduan_valid_kewenangan'=> $this->request->getPost('aduan_valid_kewenangan')
-            );
-            $this->db->table("aduan")->where(['aduan_id'=>$aduan_id])->update($form_data);
+                'aduan_valid_koordinasi'=> $this->request->getPost('aduan_valid_koordinasi'),
+                'aduan_valid_jenis_bantuan'=> $this->request->getPost('aduan_valid_jenis_bantuan'),
+            ]);
+            $this->db->table("aduan_disposisi")->where(['aduan_dis_aduan_id'=> $aduan_id])->delete();
+            foreach ($dinas as $key => $value) {
+                $this->db->table("aduan_disposisi")->insert([
+                    'aduan_dis_aduan_id'=> $aduan_id,
+                    'aduan_dis_dinas_id'=> $value,
+                ]);
+            }
+            $this->db->table("aduan_history")->where(['history_aduan_id'=> $aduan_id, 'history_status'=> 2])->update([
+                'history_created_at'=> date("Y-m-d H:i:s")
+            ]);
+            die(forceRedirect(base_url('/admin/aduan/')));
+        }else{
+            return $form->output();
+        }
+    }
+
+    public function form_valid_step2_provinsi($aduan, $aduan_id)
+    {
+        $form = new Form();
+        $form->set_submit_label("Simpan")
+            ->set_submit_icon("k-icon k-i-save")
+            ->set_resume(true)
+            ->add('aduan_pesan', 'Pesan', 'textArea', false, $aduan['aduan_pesan'], 'style="width:100%;" rows="10"')
+            ->add('aduan_valid_kewenangan', 'Kewenangan', 'select', false, $aduan['aduan_valid_kewenangan'], 'style="width:100%;"',[
+                'table'=> 'ref_kewenangan',
+                'id'=> 'ref_kew_id',
+                'label'=> 'ref_kew_label'
+            ])
+            ->set_resume(false)
+            ->add('aduan_valid_koordinasi', 'Koordinasi Dengan', 'text', true, '', 'style="width:100%;" rows="10"')
+            ->add('aduan_valid_jenis_bantuan', 'Jenis Eksekusi Bantuan', 'text', true, '', 'style="width:100%;" rows="10"');
+        if($form->formVerified()){
+            $dinas = $this->request->getPost('dinas');
+            $this->db->table("aduan")->where(['aduan_id'=> $aduan_id])->update([
+                'aduan_status'=> 2,
+                'aduan_valid'=> true,
+                'aduan_valid_at'=> date("Y-m-d H:i:s"),
+                'aduan_valid_by'=> $this->user['user_id'],
+                'aduan_valid_koordinasi'=> $this->request->getPost('aduan_valid_koordinasi'),
+                'aduan_valid_jenis_bantuan'=> $this->request->getPost('aduan_valid_jenis_bantuan'),
+            ]);
+            $this->db->table("aduan_disposisi")->where(['aduan_dis_aduan_id'=> $aduan_id])->delete();
             $this->db->table("aduan_history")->where(['history_aduan_id'=> $aduan_id, 'history_status'=> 2])->update([
                 'history_created_at'=> date("Y-m-d H:i:s")
             ]);

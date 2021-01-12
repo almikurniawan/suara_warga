@@ -4,7 +4,7 @@
     <div class="col-sm-12">
         <div class="card card-primary">
             <div class="card-header bg-primary text-white">
-                <span class="badge badge-light text-primary">1</span> Response Aduan
+                <span class="badge badge-light text-primary">2</span> Response Aduan
             </div>
             <div class="card-body">
                 <?= $content ?>

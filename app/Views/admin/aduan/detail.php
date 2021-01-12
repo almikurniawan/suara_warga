@@ -7,7 +7,7 @@
                 <?= $content?>
                 <div class="row mt-5">
                     <div class="col-12">
-                        <a href="<?= base_url("admin/aduan/valid/".$id)?>" class="btn btn-primary btn-raised">Valid</a>
+                        <a href="<?= base_url("admin/aduan/valid/".$id)?>" class="btn btn-primary btn-raised">Proses</a>
                         <a href="<?= base_url("admin/aduan/reject/".$id)?>" class="btn btn-warning btn-raised">Tidak Valid</a>
                     </div>
                 </div>
