@@ -1,7 +1,7 @@
 <?= $this->extend('template/default') ?>
 <?= $this->section('content') ?>
 <div class="row">
-    <div class="col-sm-12 col-xs-12">
+    <div class="col-sm-12 col-xs-12" style="margin-bottom:30px;">
         <a href="<?= base_url("admin/aduan")?>" class="btn btn-primary btn-sm btn-raised">Laporan Masuk</a>
         <a href="<?= base_url("admin/aduan/ditinjau")?>" class="btn btn-primary btn-sm btn-raised">Ditinjau</a>
         <a href="<?= base_url("admin/aduan/eksekusi")?>" class="btn btn-primary btn-sm btn-raised">Eksekusi</a>
