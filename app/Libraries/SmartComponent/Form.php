@@ -321,10 +321,7 @@ class Form{
         if($required){
             $title .= ' <i class="k-icon k-i-warning"></i>';
         }
-
-        // if($this->resume){
-        //     $field = '<p>'.$value.'</p>';
-        // }
+        $title = '<b>'.$title.'</b>';
 
         $this->fields[$name]= array('title'=>$title, 'field'=>$field, 'required'=> $required, 'class'=>'' ,'type'=> $type);
         return $this;
@@ -375,6 +372,8 @@ class Form{
         }else if($type='slider'){
             $field = $this->tag_start_resume . number_format($value,0,'',',' ) . $this->tag_end_resume;
         }
+
+        $title = '<b>'.$title.'</b>';
 
         $this->fields[$name]= array('title'=>$title, 'field'=>$field, 'required'=> $required, 'class'=>'' ,'type'=> $type);
         return $this;

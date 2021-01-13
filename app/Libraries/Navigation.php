@@ -76,25 +76,25 @@ class Navigation
     {
         $list_menu = array(
             array(
-                'label'         => 'Laporan Masuk',
+                'label'         => 'TIM PF',
                 'controller'    => 'admin/aduan',
                 'icon'          => 'fa-home',
             ),
-            array(
-                'label'         => 'Ditinjau',
-                'controller'    => 'admin/ketuaTim',
-                'icon'          => 'fa-home',
-            ),
-            array(
-                'label'         => 'Eksekusi',
-                'controller'    => 'admin/aduanDinas',
-                'icon'          => 'fa-home',
-            ),
-            array(
-                'label'         => 'Selesai',
-                'controller'    => 'admin/aduanDinas',
-                'icon'          => 'fa-home',
-            ),
+            // array(
+            //     'label'         => 'Ditinjau',
+            //     'controller'    => 'admin/ketuaTim',
+            //     'icon'          => 'fa-home',
+            // ),
+            // array(
+            //     'label'         => 'Eksekusi',
+            //     'controller'    => 'admin/aduanDinas',
+            //     'icon'          => 'fa-home',
+            // ),
+            // array(
+            //     'label'         => 'Selesai',
+            //     'controller'    => 'admin/aduanDinas',
+            //     'icon'          => 'fa-home',
+            // ),
             array(
                 'label'         => 'Data Master',
                 'controller'    => '#master',

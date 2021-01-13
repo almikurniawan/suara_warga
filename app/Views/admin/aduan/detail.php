@@ -3,6 +3,9 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="card card-primary">
+            <div class="card-header bg-primary text-white">
+                <center><b>DETIAL ADUAN</b></center>
+            </div>
             <div class="card-body">
                 <?= $content?>
                 <div class="row mt-5">

@@ -4,13 +4,12 @@
     <div class="col-sm-12">
         <div class="card card-primary">
             <div class="card-header bg-primary text-white">
-                <span class="badge badge-light text-primary">2</span> Response Aduan
+                <center><b>DETIAL ADUAN</b></center>
             </div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-sm-12">
-                        <a href="<?= base_url("admin/aduan/view/" . $aduan_id . "?step=2") ?>" class="btn btn-sm bg-danger text-light" href="">DETAIL ADUAN</a>
-                        <em class="float-right"><?= date_format(date_create($tanggal),'d M Y H:i:s')?></em>
+                        <a href="<?= $url_back ?>" class="btn btn-sm bg-danger text-light" href="">Kembali</a>
                     </div>
                 </div>
                 <?= $content ?>
@@ -18,4 +17,9 @@
         </div>
     </div>
 </div>
+<script>
+    function wa(phone) {
+        window.open('https://wa.me/' + phone);
+    }
+</script>
 <?= $this->endSection() ?>

@@ -46,7 +46,7 @@
 
 	<style>
 		.bg-light {
-			background-color: #e91e63 !important;
+			background-color: #D50000 !important;
 		}
 
 		.navbar-light .navbar-brand,
@@ -61,7 +61,7 @@
 
 		.dropdown-menu {
 			color: white !important;
-			background-color: #e91e63 !important;
+			background-color: #D50000 !important;
 		}
 
 		.dropdown-item {
@@ -70,7 +70,7 @@
 
 		.dropdown-menu .dropdown-item.active,
 		.dropdown-menu .dropdown-item:active {
-			background-color: #e91e63 !important;
+			background-color: #ffffff !important;
 		}
 
 		.material-icons {

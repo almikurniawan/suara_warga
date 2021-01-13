@@ -29,21 +29,21 @@ $this->section('content')
                         <div class="input-field col s12">
                             <input placeholder="Almi Kurniawan" id="nama" name="nama" type="text" class="validate" value="<?= $request->getPost('nama') ?>">
                             <label for="nama">Nama</label>
-                            <?php if ($validation->getError('nik')) { ?>
+                            <?php if ($validation->getError('nama')) { ?>
                                 <?= $error = $validation->getError('nama'); ?>
                             <?php } ?>
                         </div>
                         <div class="input-field col s12">
                             <input placeholder="086454654689" id="no_hp" name="no_hp" type="text" class="" value="<?= $request->getPost('no_hp') ?>">
                             <label class="" for="no_hp">Nomor HP</label>
-                            <?php if ($validation->getError('nik')) { ?>
+                            <?php if ($validation->getError('no_hp')) { ?>
                                 <?= $error = $validation->getError('no_hp'); ?>
                             <?php } ?>
                         </div>
                         <div class="input-field col s12">
                             <textarea placeholder="Telah Terjadi" id="laporan" name="laporan" class="materialize-textarea " style="height: 100px;"><?= $request->getPost('laporan') ?></textarea>
                             <label class="" for="laporan">Laporan</label>
-                            <?php if ($validation->getError('nik')) { ?>
+                            <?php if ($validation->getError('laporan')) { ?>
                                 <?= $error = $validation->getError('laporan'); ?>
                             <?php } ?>
                         </div>

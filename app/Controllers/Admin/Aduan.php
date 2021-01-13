@@ -136,11 +136,11 @@ class Aduan extends BaseController
         $data_foto = $this->db->table("aduan_file")->where(['aduan_file_aduan_id'=> $id])->Get()->getResultArray();
         $form = new Form();
         $resume = $form->set_resume(true)
-            ->add('aduan_pesan', 'Aduan Pesan', 'textArea', false, $data_aduan['aduan_pesan'], 'style="width:100%;" ')
-            ->add('aduan_nama', 'Nama', 'text', false, $data_aduan['aduan_nama'], 'style="width:100%;" ')
-            ->add('aduan_telp', 'Telp', 'text', false, '<span style="cursor:pointer;" onclick="wa(\''.$data_aduan['aduan_telp'].'\')" class="badge badge-primary">'.$data_aduan['aduan_telp'].'</span>', 'style="width:100%;" ')
+            ->add('aduan_pesan', 'Pesan Aduan', 'textArea', false, $data_aduan['aduan_pesan'], 'style="width:100%;" ')
+            ->add('aduan_nama', 'Nama Lengkap', 'text', false, $data_aduan['aduan_nama'], 'style="width:100%;" ')
+            ->add('aduan_telp', 'Nomor Telpon', 'text', false, '<span style="cursor:pointer;" onclick="wa(\''.$data_aduan['aduan_telp'].'\')" class="badge bg-info text-light">'.$data_aduan['aduan_telp'].'</span>', 'style="width:100%;" ')
             ->add('aduan_nik', 'NIK', 'text', false, $data_aduan['aduan_nik'], 'style="width:100%;" ')
-            ->add('aduan_created_at', 'Dilaporkan Pada', 'text', false, $data_aduan['aduan_created_at'], 'style="width:100%;" ')
+            ->add('aduan_created_at', 'Tanggal Laporan Masuk', 'text', false, $data_aduan['aduan_created_at'], 'style="width:100%;" ')
             ->output();
         $foto = "";
         foreach ($data_foto as $key => $value) {
@@ -153,15 +153,26 @@ class Aduan extends BaseController
         return $resume . $title_foto . $foto;
     }
 
+    public function view($id)
+    {
+        $data['title'] = "Detail Aduan";
+        $data['content'] = $this->resume($id);
+        $data['id'] = $id;
+        $data['url_back'] = ($this->request->getGet('step')==1 ? base_url("admin/aduan/valid/" . $id ) : base_url("admin/aduan/validStep2/" . $id ));
+        return view('admin/aduan/view', $data);
+    }
+
     public function valid($aduan_id)
     {
-        $data['content'] = $this->form_valid($aduan_id);
+        $aduan = $this->db->table('aduan')->where(['aduan_id'=> $aduan_id])->get()->getRowArray();
+        $data['content'] = $this->form_valid($aduan, $aduan_id);
+        $data['tanggal'] = $aduan['aduan_created_at'];
+        $data['aduan_id'] = $aduan_id;
         return view('admin/aduan/valid', $data);
     }
 
-    public function form_valid($aduan_id)
+    public function form_valid($aduan, $aduan_id)
     {
-        $aduan = $this->db->table('aduan')->where(['aduan_id'=> $aduan_id])->get()->getRowArray();
         $form = new Form();
         $form->set_submit_label("Next")
             ->set_submit_icon("k-icon k-i-arrow-right")
@@ -196,6 +207,8 @@ class Aduan extends BaseController
         }else{
             $data['content'] = $this->form_valid_step2($aduan, $aduan_id);
         }
+        $data['tanggal'] = $aduan['aduan_created_at'];
+        $data['aduan_id'] = $aduan_id;
         return view('admin/aduan/valid_step2', $data);
     }
 
@@ -220,7 +233,6 @@ class Aduan extends BaseController
             ->add('aduan_valid_koordinasi', 'Koordinasi Dengan', 'text', true, '', 'style="width:100%;" rows="10"')
             ->add('aduan_valid_jenis_bantuan', 'Jenis Eksekusi Bantuan', 'text', true, '', 'style="width:100%;" rows="10"');
         if($form->formVerified()){
-            $dinas = $this->request->getPost('dinas');
             $this->db->table("aduan")->where(['aduan_id'=> $aduan_id])->update([
                 'aduan_status'=> 2,
                 'aduan_valid'=> true,
@@ -230,6 +242,8 @@ class Aduan extends BaseController
                 'aduan_valid_jenis_bantuan'=> $this->request->getPost('aduan_valid_jenis_bantuan'),
             ]);
             $this->db->table("aduan_disposisi")->where(['aduan_dis_aduan_id'=> $aduan_id])->delete();
+            $dinas = $this->request->getPost('dinas');
+
             foreach ($dinas as $key => $value) {
                 $this->db->table("aduan_disposisi")->insert([
                     'aduan_dis_aduan_id'=> $aduan_id,
@@ -261,7 +275,6 @@ class Aduan extends BaseController
             ->add('aduan_valid_koordinasi', 'Koordinasi Dengan', 'text', true, '', 'style="width:100%;" rows="10"')
             ->add('aduan_valid_jenis_bantuan', 'Jenis Eksekusi Bantuan', 'text', true, '', 'style="width:100%;" rows="10"');
         if($form->formVerified()){
-            $dinas = $this->request->getPost('dinas');
             $this->db->table("aduan")->where(['aduan_id'=> $aduan_id])->update([
                 'aduan_status'=> 2,
                 'aduan_valid'=> true,

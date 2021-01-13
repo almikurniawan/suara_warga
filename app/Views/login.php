@@ -8,7 +8,7 @@
 	<meta name="author" content="Hartsimagineering.com">
 	<link rel="icon" href="./images/favicon/favicon-16x16.png">
 
-	<title>SIDAMIS</title>
+	<title>HALOMASBUP</title>
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -534,26 +534,26 @@
 <?php
 $session = session();
 ?>
+
 <body class="text-center">
 	<div class="container">
 		<div class="row mt-3">
 			<div class="container">
 				<center>
-					<h3>Dinas Sosial Kabupaten Kediri</h3>
 				</center>
 				<div class="card">
 					<center>
-						<img src="./assets/images/login.png" width="100"/>
+						<img src="./assets/images/login.png" width="100" />
 					</center>
 					<?php
-					if($session->getFlashdata('error')){
+					if ($session->getFlashdata('error')) {
 						echo '<div class="alert m-2 alert-danger">Terjadi kesalahan diserver</div>';
 					}
-					if($session->getFlashdata('warning')){
-						echo '<div class="alert m-2 alert-warning">'.$session->getFlashdata('warning').'</div>';
+					if ($session->getFlashdata('warning')) {
+						echo '<div class="alert m-2 alert-warning">' . $session->getFlashdata('warning') . '</div>';
 					}
 					?>
-					<form class="form-signin text-left" method="post" action="<?= base_url("login/auth")?>">
+					<form class="form-signin text-left" method="post" action="<?= base_url("login/auth") ?>">
 						<div class="input-container">
 							<input type="text" id="Username" name="username" required="required" />
 							<label for="Username">Username</label>
