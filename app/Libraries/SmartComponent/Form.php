@@ -368,7 +368,20 @@ class Form{
         }else if($type == 'selectServerFiltering'){
             $field = $this->tag_start_resume . $value . $this->tag_end_resume;
         } else if($type=='select_multiple'){
-            $field = $this->tag_start_resume . $value . $this->tag_end_resume;
+            if($value!=''){
+                $data = $this->db->query("select ".$attribute_select['label']." as label from ".$attribute_select['table'] . " where " . $attribute_select['id'] . " in (".implode(",", $value).")")->getResultArray();
+                if(empty($data)){
+                    $value_multi = [];
+                }else{
+                    $value_multi = [];
+                    foreach ($data as $key => $value) {
+                        $value_multi[] = $value['label'];
+                    }
+                }
+            }else{
+                $value_multi = [];
+            }
+            $field = $this->tag_start_resume . implode(",", $value_multi) . $this->tag_end_resume;
         }else if($type='slider'){
             $field = $this->tag_start_resume . number_format($value,0,'',',' ) . $this->tag_end_resume;
         }

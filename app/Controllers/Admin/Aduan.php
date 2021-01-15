@@ -17,7 +17,7 @@ class Aduan extends BaseController
 
     public function grid()
     {
-        $SQL = "select *, aduan_id as id from aduan";
+        $SQL = "select *, aduan_id as id, substring(aduan_pesan from 0 for 50)||'...' as pesan from aduan";
 
         $action['detail']     = array(
             'link'          => 'admin/aduan/detail/'
@@ -45,7 +45,7 @@ class Aduan extends BaseController
                             'title' => 'NIK',
                         ),
                         array(
-                            'field' => 'aduan_pesan',
+                            'field' => 'pesan',
                             'title' => 'Pesan',
                         ),
                         array(
@@ -202,7 +202,7 @@ class Aduan extends BaseController
     public function validStep2($aduan_id)
     {
         $aduan = $this->db->table('aduan')->where(['aduan_id'=> $aduan_id])->get()->getRowArray();
-        if($aduan['aduan_valid_kewenangan']==3){
+        if($aduan['aduan_valid_kewenangan']>=2){
             $data['content'] = $this->form_valid_step2_provinsi($aduan, $aduan_id);
         }else{
             $data['content'] = $this->form_valid_step2($aduan, $aduan_id);

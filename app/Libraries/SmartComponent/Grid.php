@@ -73,7 +73,7 @@ class Grid{
                     $fields[$value['field']] = array("type"=> "string");
                 }
             }
-            $this->config['grid_columns'][$key]['media']  = "(min-width: 400px)";
+            $this->config['grid_columns'][$key]['media']  = "(min-width: 450px)";
         }
         $this->config['grid_columns'][] = array(
             'title'     => 'Item',

@@ -10,14 +10,14 @@ class KetuaTim extends BaseController
     public function index()
     {
         $data['content']   = $this->grid();
-        $data['title']  = 'Aduan Ditinjau';
+        $data['title']  = 'List Laporan Masuk';
 
         return view('admin/ketuatim/list', $data);
     }
 
     public function grid()
     {
-        $SQL = "select *, aduan_id as id from aduan";
+        $SQL = "select *, aduan_id as id, substring(aduan_pesan from 0 for 50)||'...' as pesan from aduan";
 
         $action['detail']     = array(
             'link'          => 'admin/ketuatim/detail/'
@@ -45,7 +45,7 @@ class KetuaTim extends BaseController
                             'title' => 'NIK',
                         ),
                         array(
-                            'field' => 'aduan_pesan',
+                            'field' => 'pesan',
                             'title' => 'Pesan',
                         ),
                         array(
@@ -60,17 +60,6 @@ class KetuaTim extends BaseController
             )->output();
     }
 
-    private function search()
-    {
-        $form = new Form();
-        return $form->set_form_type('search')
-            ->set_form_method('GET')
-            ->set_submit_label('Cari')
-            ->add('kar_nama', 'Karyawan', 'text', false, $this->request->getGet('kar_nama'), 'style="width:100%;" ')
-            ->output();
-    }
-
-    
     public function detail($id)
     {
         $data['title'] = "Detail Aduan";
@@ -85,12 +74,11 @@ class KetuaTim extends BaseController
         $data_foto = $this->db->table("aduan_file")->where(['aduan_file_aduan_id'=> $id])->Get()->getResultArray();
         $form = new Form();
         $resume = $form->set_resume(true)
-            ->add('aduan_pesan', 'Aduan Pesan', 'textArea', false, $data_aduan['aduan_pesan'], 'style="width:100%;" ')
-            ->add('aduan_nama', 'Nama', 'text', false, $data_aduan['aduan_nama'], 'style="width:100%;" ')
-            ->add('aduan_telp', 'Telp', 'text', false, $data_aduan['aduan_telp'], 'style="width:100%;" ')
+            ->add('aduan_pesan', 'Pesan Aduan', 'textArea', false, $data_aduan['aduan_pesan'], 'style="width:100%;" ')
+            ->add('aduan_nama', 'Nama Lengkap', 'text', false, $data_aduan['aduan_nama'], 'style="width:100%;" ')
+            ->add('aduan_telp', 'Nomor Telpon', 'text', false, '<span style="cursor:pointer;" onclick="wa(\''.$data_aduan['aduan_telp'].'\')" class="badge bg-info text-light">'.$data_aduan['aduan_telp'].'</span>', 'style="width:100%;" ')
             ->add('aduan_nik', 'NIK', 'text', false, $data_aduan['aduan_nik'], 'style="width:100%;" ')
-            ->add('aduan_created_at', 'Dilaporkan Pada', 'text', false, $data_aduan['aduan_created_at'], 'style="width:100%;" ')
-            ->add('aduan_valid_note', 'Keterangan TIM', 'textArea', false, $data_aduan['aduan_valid_note'], 'style="width:100%;" ')
+            ->add('aduan_created_at', 'Tanggal Laporan Masuk', 'text', false, $data_aduan['aduan_created_at'], 'style="width:100%;" ')
             ->output();
         $foto = "";
         foreach ($data_foto as $key => $value) {
@@ -103,55 +91,86 @@ class KetuaTim extends BaseController
         return $resume . $title_foto . $foto;
     }
 
-    public function disposisi($aduan_id)
+    public function fullbacket($id)
     {
-        $data['title'] = "Disposisi Aduan";
-        $data['content'] = $this->form_disposisi($aduan_id);
-        return view('admin/ketuatim/disposisi', $data);
+        $data['title'] = "Full Baket";
+        $data['content'] = $this->resumeFullbaket($id);
+        $data['id'] = $id;
+        return view('admin/ketuatim/validasi', $data);
     }
 
-    public function form_disposisi($aduan_id)
+    private function resumeFullbaket($id)
     {
+        $data_aduan = $this->db->query("select * from aduan where aduan_id =  ".$id)->getRowArray();
         $form = new Form();
-        $form->set_submit_label("Disposisikan")
-            ->set_submit_icon("k-icon k-i-arrow-right")
-            ->add('dinas', 'Dinas', 'select_multiple', true, [], 'style="width:100%;" ', array(
-                'table' => 'ref_dinas',
-                'id'    => 'dinas_id',
-                'label' => 'dinas_nama'
-            ));
-        if($form->formVerified()){
-            $dinas = $this->request->getPost('dinas');
-            $this->db->table("aduan")->where(['aduan_id'=> $aduan_id])->update([
-                'aduan_status'=> 3,
-                'aduan_valid'=> true,
-                'aduan_valid_at'=> date("Y-m-d H:i:s"),
-                'aduan_valid_by'=> $this->user['user_id']
+        $resume = $form->set_resume(true)
+            ->add('aduan_pesan', 'Pesan Aduan', 'textArea', false, $data_aduan['aduan_pesan'], 'style="width:100%;" ')
+            ->add('aduan_nama', 'Nama Lengkap', 'text', false, $data_aduan['aduan_nama'], 'style="width:100%;" ')
+            ->add('aduan_valid_judul', 'Judul', 'text', false, $data_aduan['aduan_valid_judul'], 'style="width:100%;" ')
+            ->add('aduan_valid_note', 'Full Baket', 'textArea', false, $data_aduan['aduan_valid_note'], 'style="width:100%;" ')
+            ->add('aduan_valid_kewenangan', 'Kewenangan', 'select', false, $data_aduan['aduan_valid_kewenangan'], 'style="width:100%;" ',[
+                'table'=> 'ref_kewenangan',
+                'id'=> 'ref_kew_id',
+                'label'=> 'ref_kew_label'
             ]);
-            $this->db->table("aduan_disposisi")->where(['aduan_dis_aduan_id'=> $aduan_id])->delete();
+        if($data_aduan['aduan_valid_kewenangan']==1){
+            $dinas = $this->db->query("SELECT aduan_dis_dinas_id FROM aduan_disposisi WHERE aduan_dis_aduan_id = ".$id)->getResultArray();
+            $data_dinas = [];
             foreach ($dinas as $key => $value) {
-                $this->db->table("aduan_disposisi")->insert([
-                    'aduan_dis_aduan_id'=> $aduan_id,
-                    'aduan_dis_dinas_id'=> $value,
-                ]);
+                $data_dinas[] = $value['aduan_dis_dinas_id'];
             }
-            $this->db->table("aduan_history")->where(['history_aduan_id'=> $aduan_id, 'history_status'=> 3])->update([
-                'history_created_at'=> date("Y-m-d H:i:s"),
+            $resume->add('dinas', 'Dinas yang berwenang', 'select_multiple', false, $data_dinas, 'style="width:100%;" ',[
+                'table'=> 'ref_dinas',
+                'id'=> 'dinas_id',
+                'label'=> 'dinas_nama'
             ]);
+        }
+        $form
+        ->add('aduan_valid_koordinasi', 'Koordinasi Dengan', 'text', false, $data_aduan['aduan_valid_koordinasi'], 'style="width:100%;" ')
+        ->add('aduan_valid_jenis_bantuan', 'Jenis Bantuan', 'text', false, $data_aduan['aduan_valid_jenis_bantuan'], 'style="width:100%;" ');
+        return $resume->output();
+    }
+
+    public function setujui($id)
+    {
+        $dataUpdate = array(
+            'aduan_status'=> 3,
+            'aduan_approved'=> true,
+            'aduan_approved_by'=> $this->user['user_id'],
+            'aduan_approved_at'=> date("Y-m-d H:i:s")
+        );
+        $this->db->table("aduan")->where(['aduan_id'=> $id])->update($dataUpdate);
+        $this->db->table("aduan_history")->where(['history_aduan_id'=> $id, 'history_status'=> 3])->update([
+            'history_created_at'=> date("Y-m-d H:i:s")
+        ]);
+        return redirect()->to(base_url("admin/ketuatim"));
+    }
+
+    public function tolak($id)
+    {
+        $data['title'] = "Tolak";
+        $data['content'] = $this->formTolak($id);
+        $data['id'] = $id;
+        return view('admin/ketuatim/tolak', $data);
+    }
+
+    public function formTolak($id)
+    {
+        $data_aduan = $this->db->query("select * from aduan where aduan_id =  ".$id)->getRowArray();
+        $form = new Form();
+        $form->add('aduan_rejected_note', 'Alasan', 'textArea', false, $data_aduan['aduan_rejected_note'], 'style="width:100%;" ');
+        if($form->formVerified()){
+            $dataUpdate = array(
+                'aduan_status'=> 99,
+                'aduan_rejected'=> true,
+                'aduan_rejected_by'=> $this->user['user_id'],
+                'aduan_rejected_at'=> date("Y-m-d H:i:s"),
+                'aduan_rejected_note'=> $this->request->getPost('aduan_rejected_note')
+            );
+            $this->db->table("aduan")->where(['aduan_id'=> $id])->update($dataUpdate);
             die(forceRedirect(base_url('/admin/ketuatim/')));
         }else{
             return $form->output();
         }
-    }
-
-    public function reject($aduan_id)
-    {
-        $this->db->table("aduan")->where(['aduan_id'=> $aduan_id])->update([
-            'aduan_status'=> 99,
-            'aduan_invalid'=> true,
-            'aduan_invalid_at'=> date("Y-m-d H:i:s"),
-            'aduan_invalid_by'=> $this->user['user_id']
-        ]);
-        die('<script>window.parent.gridReload(); window.parent.$("#dialog").data("kendoWindow").close();</script>');
     }
 }

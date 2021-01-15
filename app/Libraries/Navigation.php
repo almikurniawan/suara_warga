@@ -80,11 +80,11 @@ class Navigation
                 'controller'    => 'admin/aduan',
                 'icon'          => 'fa-home',
             ),
-            // array(
-            //     'label'         => 'Ditinjau',
-            //     'controller'    => 'admin/ketuaTim',
-            //     'icon'          => 'fa-home',
-            // ),
+            array(
+                'label'         => 'Ketua TIM',
+                'controller'    => 'admin/ketuaTim',
+                'icon'          => 'fa-home',
+            ),
             // array(
             //     'label'         => 'Eksekusi',
             //     'controller'    => 'admin/aduanDinas',

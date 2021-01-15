@@ -8,9 +8,10 @@
             </div>
             <div class="card-body">
                 <?= $content?>
-                <div class="row mt-5">
-                    <div class="col-12">
-                        <a href="<?= base_url("admin/ketuatim/fullbacket/".$id)?>" class="btn btn-primary btn-raised">Full Baket</a>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <a href="<?= base_url("admin/ketuatim/setujui/".$id)?>" class="btn btn-sm btn-raised btn-success">Setuju</a>
+                        <a href="<?= base_url("admin/ketuatim/tolak/".$id)?>" class="btn btn-sm btn-raised btn-danger">Tolak</a>
                     </div>
                 </div>
             </div>
