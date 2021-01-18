@@ -57,12 +57,12 @@ class Laporan extends BaseController
             $this->db->table("aduan_history")->insert([
                 'history_aduan_id' => $id,
                 'history_status' => 4,
-                'history_status_text' => 'Laporan Valid',
+                'history_status_text' => 'Eksekusi Dinas',
             ]);
             $this->db->table("aduan_history")->insert([
                 'history_aduan_id' => $id,
                 'history_status' => 5,
-                'history_status_text' => 'Konfirmasi eksekusi',
+                'history_status_text' => 'Selesai',
             ]);
             return redirect()->to(base_url("laporan/form_lapor2/" . $id));
         }
