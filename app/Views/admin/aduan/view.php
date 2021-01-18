@@ -7,11 +7,11 @@
                 <center><b>DETIAL ADUAN</b></center>
             </div>
             <div class="card-body">
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-sm-12">
                         <a href="<?= $url_back ?>" class="btn btn-sm bg-danger text-light" href="">Kembali</a>
                     </div>
-                </div>
+                </div> -->
                 <?= $content ?>
             </div>
         </div>

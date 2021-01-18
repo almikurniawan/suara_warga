@@ -55,7 +55,8 @@ class Aduan extends BaseController
                         ),
 
                     ),
-                    'action'    => $action,
+                    // 'action'    => $action,
+                    'url_row_onclick'=> base_url("admin/aduan/detail")
                 )
             )->output();
     }
@@ -71,10 +72,6 @@ class Aduan extends BaseController
     {
         $SQL = "select *, aduan_id as id from aduan";
 
-        $action['detail']     = array(
-            'link'          => 'admin/aduan/detail/'
-        );
-
         $grid = new Grid();
         return $grid->set_query($SQL,[
             ['aduan_status', 2, '=']
@@ -83,6 +80,100 @@ class Aduan extends BaseController
             ->configure(
                 array(
                     'datasouce_url' => base_url("admin/aduan/gridTinjau?datasource&" . get_query_string()),
+                    'grid_columns'  => array(
+                        array(
+                            'field' => 'aduan_nama',
+                            'title' => 'Pelapor',
+                        ),
+                        array(
+                            'field' => 'aduan_telp',
+                            'title' => 'Telp',
+                        ),
+                        array(
+                            'field' => 'aduan_nik',
+                            'title' => 'NIK',
+                        ),
+                        array(
+                            'field' => 'aduan_pesan',
+                            'title' => 'Pesan',
+                        ),
+                        array(
+                            'field' => 'aduan_created_at',
+                            'title' => 'Pada',
+                            'format'=> 'datetime'
+                        ),
+
+                    ),
+                )
+            )->output();
+    }
+
+    public function eksekusi()
+    {
+        $data['content']   = $this->gridEksekusi();
+        $data['title']  = 'Aduan Dieksekusi';
+        return view('admin/aduan/list', $data);
+    }
+
+    public function gridEksekusi()
+    {
+        $SQL = "select *, aduan_id as id from aduan";
+
+        $grid = new Grid();
+        return $grid->set_query($SQL,[
+            ['aduan_status', 4, '=']
+        ])
+            ->set_sort(array('id', 'desc'))
+            ->configure(
+                array(
+                    'datasouce_url' => base_url("admin/aduan/gridEksekusi?datasource&" . get_query_string()),
+                    'grid_columns'  => array(
+                        array(
+                            'field' => 'aduan_nama',
+                            'title' => 'Pelapor',
+                        ),
+                        array(
+                            'field' => 'aduan_telp',
+                            'title' => 'Telp',
+                        ),
+                        array(
+                            'field' => 'aduan_nik',
+                            'title' => 'NIK',
+                        ),
+                        array(
+                            'field' => 'aduan_pesan',
+                            'title' => 'Pesan',
+                        ),
+                        array(
+                            'field' => 'aduan_created_at',
+                            'title' => 'Pada',
+                            'format'=> 'datetime'
+                        ),
+
+                    ),
+                )
+            )->output();
+    }
+
+    public function selesai()
+    {
+        $data['content']   = $this->gridSelesai();
+        $data['title']  = 'Aduan Selesai';
+        return view('admin/aduan/list', $data);
+    }
+
+    public function gridSelesai()
+    {
+        $SQL = "select *, aduan_id as id from aduan";
+
+        $grid = new Grid();
+        return $grid->set_query($SQL,[
+            ['aduan_status', 5, '=']
+        ])
+            ->set_sort(array('id', 'desc'))
+            ->configure(
+                array(
+                    'datasouce_url' => base_url("admin/aduan/gridSelesai?datasource&" . get_query_string()),
                     'grid_columns'  => array(
                         array(
                             'field' => 'aduan_nama',

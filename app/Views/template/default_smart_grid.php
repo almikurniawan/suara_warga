@@ -97,7 +97,7 @@ $columns = preg_replace($re, '"template":kendo.template$1,', $columns);
         // height: "<?= $grid_height?>",
         scrollable : false,
         groupable: false,
-        // filterable : true,
+        change: onChange_<?= $grid_name?>,
         toolbar: '<?= $toolbarComponent . $toolbarHtml?>',
         sortable: {
             mode: "multiple",
@@ -113,4 +113,15 @@ $columns = preg_replace($re, '"template":kendo.template$1,', $columns);
         columns: <?= $columns?>
     });
 });
+
+function onChange_<?= $grid_name?>(){
+    var grid = $("#grid_<?= $grid_name?>").data("kendoGrid");
+    var selectedItem = grid.dataItem(grid.select());
+    <?php
+        if($url_row_onclick!=''){?>
+            window.location.href= "<?= $url_row_onclick?>/"+selectedItem.id;
+        <?php
+        }
+    ?>
+}
 </script>

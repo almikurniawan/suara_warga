@@ -8,7 +8,7 @@
         <a href="<?= base_url("admin/ketuatim/ditinjau")?>" class="btn bg-info text-light btn-sm btn-raised">Approved</a>
     <!-- </div> -->
     <!-- <div class="col-sm-3 col-xs-3"> -->
-        <a href="<?= base_url("admin/ketuatim/eksekusi")?>" class="btn bg-info text-light btn-sm btn-raised">Rejected</a>
+        <a href="<?= base_url("admin/ketuatim/eksekusi")?>" class="btn bg-info text-light btn-sm btn-raised">Eksekusi</a>
     <!-- </div> -->
     <!-- <div class="col-sm-3 col-xs-3"> -->
         <a href="<?= base_url("admin/ketuatim/selesai")?>" class="btn bg-info text-light btn-sm btn-raised">Selesai</a>

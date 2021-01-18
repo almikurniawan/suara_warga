@@ -174,6 +174,9 @@ class Form{
             if($value!=''){
                 $field .= '<a target="_new" href="'.$value.'">Lihat File</a>';
             }
+        }else if($type=='file_multiple'){
+            $this->file_upload = true;
+            $field = '<input type="file" id="'.$name.'" name="'.$name.'[]" '.$extraAttribute.'/><script>$("#'.$name.'").kendoUpload({multiple: true});</script>';
         }else if($type=='select'){
             $option = '<option value="">No Option</option>';
             $where = '  ';
@@ -421,7 +424,7 @@ class Form{
 
         $this->fields = array();
         if($this->file_upload){
-            $this->attribute_form .= 'enctype="multipart/form-data"';
+            $this->attribute_form .= ' enctype="multipart/form-data"';
         }
 
         $form = $alert . '<form action="'.$this->form_action.'" autocomplete="off" method="'.$this->form_method.'" '.$this->attribute_form.'>'.$view.'</form>';

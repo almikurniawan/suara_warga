@@ -19,10 +19,6 @@ class KetuaTim extends BaseController
     {
         $SQL = "select *, aduan_id as id, substring(aduan_pesan from 0 for 50)||'...' as pesan from aduan";
 
-        $action['detail']     = array(
-            'link'          => 'admin/ketuatim/detail/'
-        );
-
         $grid = new Grid();
         return $grid->set_query($SQL,[
             ['aduan_status', 2, '=']
@@ -55,7 +51,151 @@ class KetuaTim extends BaseController
                         ),
 
                     ),
-                    'action'    => $action,
+                    'url_row_onclick'=> base_url("admin/ketuatim/detail")
+                )
+            )->output();
+    }
+
+    public function ditinjau()
+    {
+        $data['content']   = $this->gridDitinjau();
+        $data['title']  = 'List Laporan Masuk';
+
+        return view('admin/ketuatim/list', $data);
+    }
+
+    public function gridDitinjau()
+    {
+        $SQL = "select *, aduan_id as id, substring(aduan_pesan from 0 for 50)||'...' as pesan from aduan";
+
+        $grid = new Grid();
+        return $grid->set_query($SQL,[
+            ['aduan_status', 3, '=']
+        ])
+            ->set_sort(array('id', 'desc'))
+            ->configure(
+                array(
+                    'datasouce_url' => base_url("admin/ketuatim/gridDitinjau?datasource&" . get_query_string()),
+                    'grid_columns'  => array(
+                        array(
+                            'field' => 'aduan_nama',
+                            'title' => 'Pelapor',
+                        ),
+                        array(
+                            'field' => 'aduan_telp',
+                            'title' => 'Telp',
+                        ),
+                        array(
+                            'field' => 'aduan_nik',
+                            'title' => 'NIK',
+                        ),
+                        array(
+                            'field' => 'pesan',
+                            'title' => 'Pesan',
+                        ),
+                        array(
+                            'field' => 'aduan_created_at',
+                            'title' => 'Pada',
+                            'format'=> 'datetime'
+                        ),
+
+                    ),
+                )
+            )->output();
+    }
+
+    public function selesai()
+    {
+        $data['content']   = $this->gridSelesai();
+        $data['title']  = 'List Laporan Masuk';
+
+        return view('admin/ketuatim/list', $data);
+    }
+
+    public function gridSelesai()
+    {
+        $SQL = "select *, aduan_id as id, substring(aduan_pesan from 0 for 50)||'...' as pesan from aduan";
+
+        $grid = new Grid();
+        return $grid->set_query($SQL,[
+            ['aduan_status', 5, '=']
+        ])
+            ->set_sort(array('id', 'desc'))
+            ->configure(
+                array(
+                    'datasouce_url' => base_url("admin/ketuatim/gridSelesai?datasource&" . get_query_string()),
+                    'grid_columns'  => array(
+                        array(
+                            'field' => 'aduan_nama',
+                            'title' => 'Pelapor',
+                        ),
+                        array(
+                            'field' => 'aduan_telp',
+                            'title' => 'Telp',
+                        ),
+                        array(
+                            'field' => 'aduan_nik',
+                            'title' => 'NIK',
+                        ),
+                        array(
+                            'field' => 'pesan',
+                            'title' => 'Pesan',
+                        ),
+                        array(
+                            'field' => 'aduan_created_at',
+                            'title' => 'Pada',
+                            'format'=> 'datetime'
+                        ),
+
+                    ),
+                )
+            )->output();
+    }
+
+    public function eksekusi()
+    {
+        $data['content']   = $this->gridEksekusi();
+        $data['title']  = 'List Laporan Masuk';
+
+        return view('admin/ketuatim/list', $data);
+    }
+
+    public function gridEksekusi()
+    {
+        $SQL = "select *, aduan_id as id, substring(aduan_pesan from 0 for 50)||'...' as pesan from aduan";
+
+        $grid = new Grid();
+        return $grid->set_query($SQL,[
+            ['aduan_status', 4, '=']
+        ])
+            ->set_sort(array('id', 'desc'))
+            ->configure(
+                array(
+                    'datasouce_url' => base_url("admin/ketuatim/gridEksekusi?datasource&" . get_query_string()),
+                    'grid_columns'  => array(
+                        array(
+                            'field' => 'aduan_nama',
+                            'title' => 'Pelapor',
+                        ),
+                        array(
+                            'field' => 'aduan_telp',
+                            'title' => 'Telp',
+                        ),
+                        array(
+                            'field' => 'aduan_nik',
+                            'title' => 'NIK',
+                        ),
+                        array(
+                            'field' => 'pesan',
+                            'title' => 'Pesan',
+                        ),
+                        array(
+                            'field' => 'aduan_created_at',
+                            'title' => 'Pada',
+                            'format'=> 'datetime'
+                        ),
+
+                    ),
                 )
             )->output();
     }

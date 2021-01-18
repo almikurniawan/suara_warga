@@ -31,6 +31,7 @@ class Grid{
         $this->config = array(
             'pageSize'      => 25,
             'grid_name'     => $this->uniq_id,
+            'url_row_onclick'   => "",
             'gridReload'    => "gridReload()",
             'datasouce_name'=> $this->uniq_id,
             'grid_name'     => $this->uniq_id,
