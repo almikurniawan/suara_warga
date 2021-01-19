@@ -12,7 +12,7 @@ class KetuaTim extends BaseController
         $data['content']   = $this->grid();
         $data['title']  = 'List Laporan Masuk';
 
-        return view('admin/ketuaTim/list', $data);
+        return view('admin/ketuatim/list', $data);
     }
 
     public function grid()
@@ -61,7 +61,7 @@ class KetuaTim extends BaseController
         $data['content']   = $this->gridDitinjau();
         $data['title']  = 'List Laporan Masuk';
 
-        return view('admin/ketuaTim/list', $data);
+        return view('admin/ketuatim/list', $data);
     }
 
     public function gridDitinjau()
@@ -109,7 +109,7 @@ class KetuaTim extends BaseController
         $data['content']   = $this->gridSelesai();
         $data['title']  = 'List Laporan Masuk';
 
-        return view('admin/ketuaTim/list', $data);
+        return view('admin/ketuatim/list', $data);
     }
 
     public function gridSelesai()
@@ -157,7 +157,7 @@ class KetuaTim extends BaseController
         $data['content']   = $this->gridEksekusi();
         $data['title']  = 'List Laporan Masuk';
 
-        return view('admin/ketuaTim/list', $data);
+        return view('admin/ketuatim/list', $data);
     }
 
     public function gridEksekusi()
@@ -205,7 +205,7 @@ class KetuaTim extends BaseController
         $data['title'] = "Detail Aduan";
         $data['content'] = $this->resume($id);
         $data['id'] = $id;
-        return view('admin/ketuaTim/detail', $data);
+        return view('admin/ketuatim/detail', $data);
     }
 
     private function resume($id)
@@ -236,7 +236,7 @@ class KetuaTim extends BaseController
         $data['title'] = "Full Baket";
         $data['content'] = $this->resumeFullbaket($id);
         $data['id'] = $id;
-        return view('admin/ketuaTim/validasi', $data);
+        return view('admin/ketuatim/validasi', $data);
     }
 
     private function resumeFullbaket($id)
@@ -283,7 +283,7 @@ class KetuaTim extends BaseController
         $this->db->table("aduan_history")->where(['history_aduan_id'=> $id, 'history_status'=> 3])->update([
             'history_created_at'=> date("Y-m-d H:i:s")
         ]);
-        return redirect()->to(base_url("admin/ketuatim"));
+        return redirect()->to(base_url("admin/ketuaTim"));
     }
 
     public function tolak($id)
