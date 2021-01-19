@@ -12,7 +12,7 @@ class KetuaTim extends BaseController
         $data['content']   = $this->grid();
         $data['title']  = 'List Laporan Masuk';
 
-        return view('admin/ketuatim/list', $data);
+        return view('admin/ketuaTim/list', $data);
     }
 
     public function grid()
@@ -26,7 +26,7 @@ class KetuaTim extends BaseController
             ->set_sort(array('id', 'desc'))
             ->configure(
                 array(
-                    'datasouce_url' => base_url("admin/ketuatim/grid?datasource&" . get_query_string()),
+                    'datasouce_url' => base_url("admin/ketuaTim/grid?datasource&" . get_query_string()),
                     'grid_columns'  => array(
                         array(
                             'field' => 'aduan_nama',
@@ -51,7 +51,7 @@ class KetuaTim extends BaseController
                         ),
 
                     ),
-                    'url_row_onclick'=> base_url("admin/ketuatim/detail")
+                    'url_row_onclick'=> base_url("admin/ketuaTim/detail")
                 )
             )->output();
     }
@@ -61,7 +61,7 @@ class KetuaTim extends BaseController
         $data['content']   = $this->gridDitinjau();
         $data['title']  = 'List Laporan Masuk';
 
-        return view('admin/ketuatim/list', $data);
+        return view('admin/ketuaTim/list', $data);
     }
 
     public function gridDitinjau()
@@ -75,7 +75,7 @@ class KetuaTim extends BaseController
             ->set_sort(array('id', 'desc'))
             ->configure(
                 array(
-                    'datasouce_url' => base_url("admin/ketuatim/gridDitinjau?datasource&" . get_query_string()),
+                    'datasouce_url' => base_url("admin/ketuaTim/gridDitinjau?datasource&" . get_query_string()),
                     'grid_columns'  => array(
                         array(
                             'field' => 'aduan_nama',
@@ -109,7 +109,7 @@ class KetuaTim extends BaseController
         $data['content']   = $this->gridSelesai();
         $data['title']  = 'List Laporan Masuk';
 
-        return view('admin/ketuatim/list', $data);
+        return view('admin/ketuaTim/list', $data);
     }
 
     public function gridSelesai()
@@ -123,7 +123,7 @@ class KetuaTim extends BaseController
             ->set_sort(array('id', 'desc'))
             ->configure(
                 array(
-                    'datasouce_url' => base_url("admin/ketuatim/gridSelesai?datasource&" . get_query_string()),
+                    'datasouce_url' => base_url("admin/ketuaTim/gridSelesai?datasource&" . get_query_string()),
                     'grid_columns'  => array(
                         array(
                             'field' => 'aduan_nama',
@@ -157,7 +157,7 @@ class KetuaTim extends BaseController
         $data['content']   = $this->gridEksekusi();
         $data['title']  = 'List Laporan Masuk';
 
-        return view('admin/ketuatim/list', $data);
+        return view('admin/ketuaTim/list', $data);
     }
 
     public function gridEksekusi()
@@ -171,7 +171,7 @@ class KetuaTim extends BaseController
             ->set_sort(array('id', 'desc'))
             ->configure(
                 array(
-                    'datasouce_url' => base_url("admin/ketuatim/gridEksekusi?datasource&" . get_query_string()),
+                    'datasouce_url' => base_url("admin/ketuaTim/gridEksekusi?datasource&" . get_query_string()),
                     'grid_columns'  => array(
                         array(
                             'field' => 'aduan_nama',
@@ -205,7 +205,7 @@ class KetuaTim extends BaseController
         $data['title'] = "Detail Aduan";
         $data['content'] = $this->resume($id);
         $data['id'] = $id;
-        return view('admin/ketuatim/detail', $data);
+        return view('admin/ketuaTim/detail', $data);
     }
 
     private function resume($id)
@@ -236,7 +236,7 @@ class KetuaTim extends BaseController
         $data['title'] = "Full Baket";
         $data['content'] = $this->resumeFullbaket($id);
         $data['id'] = $id;
-        return view('admin/ketuatim/validasi', $data);
+        return view('admin/ketuaTim/validasi', $data);
     }
 
     private function resumeFullbaket($id)
@@ -291,7 +291,7 @@ class KetuaTim extends BaseController
         $data['title'] = "Tolak";
         $data['content'] = $this->formTolak($id);
         $data['id'] = $id;
-        return view('admin/ketuatim/tolak', $data);
+        return view('admin/ketuaTim/tolak', $data);
     }
 
     public function formTolak($id)
@@ -308,7 +308,7 @@ class KetuaTim extends BaseController
                 'aduan_rejected_note'=> $this->request->getPost('aduan_rejected_note')
             );
             $this->db->table("aduan")->where(['aduan_id'=> $id])->update($dataUpdate);
-            die(forceRedirect(base_url('/admin/ketuatim/')));
+            die(forceRedirect(base_url('/admin/ketuaTim/')));
         }else{
             return $form->output();
         }
