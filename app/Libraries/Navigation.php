@@ -96,7 +96,7 @@ class Navigation
             //     'icon'          => 'fa-home',
             // ),
             array(
-                'label'         => 'Eksekusi',
+                'label'         => 'Dinas',
                 'controller'    => 'admin/EksekusiDinas',
                 'icon'          => 'fa-home',
             ),
