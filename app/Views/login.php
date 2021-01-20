@@ -535,13 +535,13 @@
 $session = session();
 ?>
 
-<body class="text-center">
+<body class="text-center bg-white">
 	<div class="container">
 		<div class="row mt-3">
 			<div class="container">
 				<center>
 				</center>
-				<div class="card">
+				<div class="card" style="background-color: #D50000 !important; color: white;">
 					<center>
 						<img src="./assets/images/login.png" width="100" />
 					</center>
@@ -555,13 +555,13 @@ $session = session();
 					?>
 					<form class="form-signin text-left" method="post" action="<?= base_url("login/auth") ?>">
 						<div class="input-container">
-							<input type="text" id="Username" name="username" required="required" />
-							<label for="Username">Username</label>
+							<input type="text" id="Username" name="username" required="required"  class="text-white"/>
+							<label for="Username" class="text-white">Username</label>
 							<div class="bar"></div>
 						</div>
 						<div class="input-container">
-							<input type="password" id="Password" name="password" required="required" />
-							<label for="Password">Password</label>
+							<input type="password" id="Password" name="password" required="required"  class="text-white"/>
+							<label for="Password" class="text-white">Password</label>
 							<div class="bar"></div>
 						</div>
 						<div class="button-container">
