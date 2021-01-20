@@ -29,7 +29,7 @@ class Pencarian extends BaseController
         if(empty($data['aduan'])){
             return redirect()->to(base_url("pencarian"));
         }
-        $data['histori'] = $this->db->query("select *, case when history_status = 3 then (SELECT string_agg(dinas_nama, '<br/>') FROM aduan_disposisi left join ref_dinas on dinas_id = aduan_disposisi.aduan_dis_dinas_id where aduan_dis_aduan_id=".$id.") else '' end as dinas from aduan_history where history_aduan_id=".$id." order by history_status asc")->getResultArray();
+        $data['histori'] = $this->db->query("select *, case when history_status = 3 and history_created_at is not null then (SELECT string_agg(dinas_nama, '<br/>') FROM aduan_disposisi left join ref_dinas on dinas_id = aduan_disposisi.aduan_dis_dinas_id where aduan_dis_aduan_id=".$id.") else '' end as dinas from aduan_history where history_aduan_id=".$id." order by history_status asc")->getResultArray();
         return view('frontend/pencarian_detail', $data);
     }
 }
