@@ -2,16 +2,16 @@
 <?= $this->section('content') ?>
 <div class="row">
     <div class="col-sm-12 col-xs-12 mb-2">
-        <a href="<?= base_url("admin/ketuatim")?>" class="btn bg-info text-light btn-sm btn-raised">Aduan</a>
+        <a href="<?= base_url("admin/ketuaTim")?>" class="btn bg-info text-light btn-sm btn-raised">Aduan</a>
     <!-- </div> -->
     <!-- <div class="col-sm-3 col-xs-3"> -->
-        <a href="<?= base_url("admin/ketuatim/ditinjau")?>" class="btn bg-info text-light btn-sm btn-raised">Approved</a>
+        <a href="<?= base_url("admin/ketuaTim/ditinjau")?>" class="btn bg-info text-light btn-sm btn-raised">Approved</a>
     <!-- </div> -->
     <!-- <div class="col-sm-3 col-xs-3"> -->
-        <a href="<?= base_url("admin/ketuatim/eksekusi")?>" class="btn bg-info text-light btn-sm btn-raised">Eksekusi</a>
+        <a href="<?= base_url("admin/ketuaTim/eksekusi")?>" class="btn bg-info text-light btn-sm btn-raised">Eksekusi</a>
     <!-- </div> -->
     <!-- <div class="col-sm-3 col-xs-3"> -->
-        <a href="<?= base_url("admin/ketuatim/selesai")?>" class="btn bg-info text-light btn-sm btn-raised">Selesai</a>
+        <a href="<?= base_url("admin/ketuaTim/selesai")?>" class="btn bg-info text-light btn-sm btn-raised">Selesai</a>
     </div>
 </div>
 <div class="row">
