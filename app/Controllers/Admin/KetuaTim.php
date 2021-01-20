@@ -26,7 +26,7 @@ class KetuaTim extends BaseController
             ->set_sort(array('id', 'desc'))
             ->configure(
                 array(
-                    'datasouce_url' => base_url("admin/ketuatim/grid?datasource&" . get_query_string()),
+                    'datasouce_url' => base_url("admin/ketuaTim/grid?datasource&" . get_query_string()),
                     'grid_columns'  => array(
                         array(
                             'field' => 'aduan_nama',
@@ -51,7 +51,7 @@ class KetuaTim extends BaseController
                         ),
 
                     ),
-                    'url_row_onclick'=> base_url("admin/ketuatim/detail")
+                    'url_row_onclick'=> base_url("admin/ketuaTim/detail")
                 )
             )->output();
     }
@@ -75,7 +75,7 @@ class KetuaTim extends BaseController
             ->set_sort(array('id', 'desc'))
             ->configure(
                 array(
-                    'datasouce_url' => base_url("admin/ketuatim/gridDitinjau?datasource&" . get_query_string()),
+                    'datasouce_url' => base_url("admin/ketuaTim/gridDitinjau?datasource&" . get_query_string()),
                     'grid_columns'  => array(
                         array(
                             'field' => 'aduan_nama',
@@ -123,7 +123,7 @@ class KetuaTim extends BaseController
             ->set_sort(array('id', 'desc'))
             ->configure(
                 array(
-                    'datasouce_url' => base_url("admin/ketuatim/gridSelesai?datasource&" . get_query_string()),
+                    'datasouce_url' => base_url("admin/ketuaTim/gridSelesai?datasource&" . get_query_string()),
                     'grid_columns'  => array(
                         array(
                             'field' => 'aduan_nama',
@@ -171,7 +171,7 @@ class KetuaTim extends BaseController
             ->set_sort(array('id', 'desc'))
             ->configure(
                 array(
-                    'datasouce_url' => base_url("admin/ketuatim/gridEksekusi?datasource&" . get_query_string()),
+                    'datasouce_url' => base_url("admin/ketuaTim/gridEksekusi?datasource&" . get_query_string()),
                     'grid_columns'  => array(
                         array(
                             'field' => 'aduan_nama',
@@ -283,7 +283,7 @@ class KetuaTim extends BaseController
         $this->db->table("aduan_history")->where(['history_aduan_id'=> $id, 'history_status'=> 3])->update([
             'history_created_at'=> date("Y-m-d H:i:s")
         ]);
-        return redirect()->to(base_url("admin/ketuatim"));
+        return redirect()->to(base_url("admin/ketuaTim"));
     }
 
     public function tolak($id)
@@ -308,7 +308,7 @@ class KetuaTim extends BaseController
                 'aduan_rejected_note'=> $this->request->getPost('aduan_rejected_note')
             );
             $this->db->table("aduan")->where(['aduan_id'=> $id])->update($dataUpdate);
-            die(forceRedirect(base_url('/admin/ketuatim/')));
+            die(forceRedirect(base_url('/admin/ketuaTim/')));
         }else{
             return $form->output();
         }
