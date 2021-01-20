@@ -10,7 +10,7 @@
                 <?= $content?>
                 <div class="row mt-5">
                     <div class="col-12">
-                        <a href="<?= base_url("admin/ketuatim/fullbacket/".$id)?>" class="btn btn-primary btn-raised">Full Baket</a>
+                        <a href="<?= base_url("admin/ketuaTim/fullbacket/".$id)?>" class="btn btn-primary btn-raised">Full Baket</a>
                     </div>
                 </div>
             </div>
