@@ -291,7 +291,8 @@ class KetuaTim extends BaseController
         $data['title'] = "Tolak";
         $data['content'] = $this->formTolak($id);
         $data['id'] = $id;
-        return view('admin/ketuaTim/tolak', $data);
+        
+        return view('admin/ketuatim/tolak', $data);
     }
 
     public function formTolak($id)
