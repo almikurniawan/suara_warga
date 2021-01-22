@@ -51,7 +51,6 @@ class KetuaTim extends BaseController
                         ),
 
                     ),
-                    'url_row_onclick'=> base_url("admin/ketuaTim/detail")
                 )
             )->output();
     }
@@ -98,8 +97,8 @@ class KetuaTim extends BaseController
                             'title' => 'Pada',
                             'format'=> 'datetime'
                         ),
-
                     ),
+                    'url_row_onclick'=> base_url("admin/ketuaTim/detail")
                 )
             )->output();
     }
