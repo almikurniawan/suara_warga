@@ -165,7 +165,7 @@ class KetuaTim extends BaseController
 
         $grid = new Grid();
         return $grid->set_query($SQL,[
-            ['aduan_status', 4, '=']
+            ['aduan_status', 3, '=']
         ])
             ->set_sort(array('id', 'desc'))
             ->configure(
