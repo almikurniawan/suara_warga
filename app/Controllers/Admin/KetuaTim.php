@@ -21,7 +21,7 @@ class KetuaTim extends BaseController
 
         $grid = new Grid();
         return $grid->set_query($SQL,[
-            ['aduan_status', 2, '=']
+            ['aduan_status', 1, '=']
         ])
             ->set_sort(array('id', 'desc'))
             ->configure(
@@ -70,7 +70,7 @@ class KetuaTim extends BaseController
 
         $grid = new Grid();
         return $grid->set_query($SQL,[
-            ['aduan_status', 3, '=']
+            ['aduan_status', 2, '=']
         ])
             ->set_sort(array('id', 'desc'))
             ->configure(

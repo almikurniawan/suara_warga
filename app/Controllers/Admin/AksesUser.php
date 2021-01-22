@@ -20,10 +20,14 @@ class AksesUser extends BaseController
     public function grid()
     {
         $SQL = "SELECT
-                    user_id AS ID,user_name,
-                    ARRAY_TO_STRING(( SELECT ARRAY_AGG(ref_group_akses_label) FROM ref_user_akses left join ref_group_akses on ref_group_akses_id = ref_user_akses_group_id where ref_user_akses_user_id = user_id ),', ') as group
+                    user_id AS ID,
+                    user_name,
+                    ref_type_user_label as type_user,
+                    dinas_nama
                 FROM
-                    PUBLIC.USER";
+                    PUBLIC.USER 
+                    left join ref_type_user on ref_type_user_id = user_type
+                    left join ref_dinas on dinas_id = user_dinas_id";
 
         $action['edit']     = array(
             'link'          => 'admin/aksesUser/edit/'
@@ -37,10 +41,6 @@ class AksesUser extends BaseController
                 array('user_name', $this->request->getGet('user'))
             ))
             ->set_sort(array('id', 'desc'))
-            // ->set_snippet(function($id, $data){
-            //     $data['user_name'] = $data['user_name'];
-            //     return $data;
-            // })
             ->configure(
                 array(
                     'datasouce_url' => base_url("admin/aksesUser/grid?datasource&" . get_query_string()),
@@ -50,19 +50,20 @@ class AksesUser extends BaseController
                             'title' => 'Nama User',
                         ),
                         array(
-                            'field' => 'group',
-                            'title' => 'Group',
-                            'encoded' => false
+                            'field' => 'type_user',
+                            'title' => 'Type User',
                         ),
+                        array(
+                            'field' => 'dinas_nama',
+                            'title' => 'Dinas',
+                        )
                     ),
                     'action'    => $action,
                 )
             )
             ->set_toolbar(function($toolbar){
                 $toolbar
-                // ->addHtml('<a href="" class="btn">Tambah User Bos</a>')
-                ->add('add', ['label'=>'Tambah User', 'url'=> base_url("admin/aksesUser/add")])
-                ->add('download');
+                ->add('add', ['label'=>'Tambah User', 'url'=> base_url("admin/aksesUser/add")]);
             })
             ->output();
     }
@@ -92,51 +93,38 @@ class AksesUser extends BaseController
         $data['url_back']= base_url("admin/aksesUser");
         return view('global/form', $data);
     }
-    public function delete()
-    {
-        $id = $this->request->getPost('id');
-        $this->db->table('ref_user_akses')->delete(['ref_user_akses_id' => $id]);
-        return $this->response->setJSON(
-            array(
-                'status' => true,
-                'message' => 'Success delete data'
-            )
-        );
-    }
+    
     public function form($id = null)
     {
-
+        $data = false;
         if ($id != null) {
             $data = $this->db->table('user')->getWhere(['user_id' => $id])->getRowArray();
-            $group = $this->db->table('ref_user_akses')->select('ref_user_akses_group_id')->getWhere(['ref_user_akses_user_id' => $id])->getResultArray();
-            foreach ($group as $key => $value) {
-                $group[] = $value['ref_user_akses_group_id'];
-            }
-        } else {
-            $data = array(
-                'group' => array(),
-                'user_name' => '',
-                'user_password' => '',
-            );
-            $group = array();
         }
 
         $form = new Form();
-        $form->set_attribute_form('class="form-horizontal"')->set_form_action(base_url(('admin/aksesUser/form/' . $id)))
+        $form->set_attribute_form('class="form-horizontal"')
             ->add('user_name', 'Username', 'text', true, ($data) ? $data['user_name'] : '', 'style="width:100%;"')
             ->add('user_password', 'Password', 'password', false, '', 'style="width:100%;"')
-            ->add('ref_user_akses_group_id', 'Nama Group', 'select_multiple', true, ($data) ? $group : '', ' style="width:100%;"', array(
-                'table' => 'ref_group_akses',
-                'id' => 'ref_group_akses_id',
-                'label' => 'ref_group_akses_label',
+            ->add('user_type', 'Type User', 'select', true, ($data) ? $data['user_type'] : 0, ' style="width:100%;"', array(
+                'table' => 'ref_type_user',
+                'id' => 'ref_type_user_id',
+                'label' => 'ref_type_user_label',
+            ))
+            ->add('user_dinas_id', 'Dinas', 'select', false, ($data) ? $data['user_dinas_id'] : 0, ' style="width:100%;"', array(
+                'table' => 'ref_dinas',
+                'id' => 'dinas_id',
+                'label' => 'dinas_nama',
             ));
         if ($form->formVerified()) {
             $data_insert = array(
-                'user_name'    => $this->request->getPost('user_name'),
-                // 'user_password'    => sha1($this->request->getPost('user_password')),
+                'user_name'=> $this->request->getPost('user_name'),
+                'user_type'=> $this->request->getPost('user_type'),
             );
             if($this->request->getPost('user_password')!=''){
                 $data_insert['user_password'] = sha1($this->request->getPost('user_password'));
+            }
+            if($this->request->getPost('user_dinas_id')!=''){
+                $data_insert['user_dinas_id'] = $this->request->getPost('user_dinas_id');
             }
             if ($id != null) {
                 $this->db->table('public.user')->where('user_id', $id)->update($data_insert);
@@ -147,15 +135,16 @@ class AksesUser extends BaseController
                 $id = $this->db->insertID();
                 $this->session->setFlashdata('success', 'Sukses Insert Baru');
             }
-            foreach ($this->request->getPost('ref_user_akses_group_id') as $key => $value) {
-                $this->db->table('ref_user_akses')->insert(array(
-                    'ref_user_akses_user_id' => $id,
-                    'ref_user_akses_group_id' => $value
-                ));
-            }
             die(forceRedirect(base_url('/admin/aksesUser')));
         } else {
             return $form->output();
         }
+    }
+
+    public function delete()
+    {
+        $id = $this->request->getPost('id');
+        $this->db->table("user")->where(['user_id'=>$id])->delete();
+        return $this->response->setJSON(['status'=> true,'message'=>'Sukses delete user']);
     }
 }

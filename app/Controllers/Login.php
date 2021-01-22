@@ -22,7 +22,17 @@ class Login extends BaseController
 		}
 		if (!empty($data)) {
 			$this->session->set('user', $data);
-			return redirect()->to(base_url("admin/aduan"));
+			if($data['user_type']==1){
+				return redirect()->to(base_url("admin/aduan"));
+			}else if($data['user_type']==2){
+				return redirect()->to(base_url("admin/ketuaTim"));
+			}else if($data['user_type']==3){
+				return redirect()->to(base_url("admin/eksekusiDinas"));
+			}else if($data['user_type']==4){
+				return redirect()->to(base_url("admin/dashboard"));
+			}else{
+				return redirect()->to(base_url("admin/aduan"));
+			}
 		} else {
 			$this->session->setFlashdata('warning', 'Login Gagal !');
 			return redirect()->to(base_url("login"));

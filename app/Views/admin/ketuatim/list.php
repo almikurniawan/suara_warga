@@ -5,7 +5,7 @@
         <a href="<?= base_url("admin/ketuaTim")?>" class="btn bg-info text-light btn-sm btn-raised">Aduan</a>
     <!-- </div> -->
     <!-- <div class="col-sm-3 col-xs-3"> -->
-        <a href="<?= base_url("admin/ketuaTim/ditinjau")?>" class="btn bg-info text-light btn-sm btn-raised">Approved</a>
+        <a href="<?= base_url("admin/ketuaTim/ditinjau")?>" class="btn bg-info text-light btn-sm btn-raised">Perlu Ditinjau</a>
     <!-- </div> -->
     <!-- <div class="col-sm-3 col-xs-3"> -->
         <a href="<?= base_url("admin/ketuaTim/eksekusi")?>" class="btn bg-info text-light btn-sm btn-raised">Eksekusi</a>

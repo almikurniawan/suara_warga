@@ -138,6 +138,97 @@ class Navigation
             ),
         );
 
+        $user = $this->session->get('user');
+        if($user['user_type']==1){
+            $list_menu = array(
+                array(
+                    'label'         => 'Dashboard',
+                    'controller'    => 'admin/aduan',
+                    'icon'          => 'fa-home',
+                ),
+            );
+        }else if($user['user_type']==2){
+            $list_menu = array(
+                array(
+                    'label'         => 'Dashboard',
+                    'controller'    => 'admin/ketuaTim',
+                    'icon'          => 'fa-home',
+                ),
+            );
+        }else if($user['user_type']==3){
+            $list_menu = array(
+                array(
+                    'label'         => 'Dashboard',
+                    'controller'    => 'admin/EksekusiDinas',
+                    'icon'          => 'fa-home',
+                ),
+            );
+        }else if($user['user_type']==5){
+            $list_menu = array(
+                array(
+                    'label'         => 'TIM PF',
+                    'controller'    => 'admin/aduan',
+                    'icon'          => 'fa-home',
+                ),
+                array(
+                    'label'         => 'Ketua TIM',
+                    'controller'    => 'admin/ketuaTim',
+                    'icon'          => 'fa-home',
+                ),
+                // array(
+                //     'label'         => 'Eksekusi',
+                //     'controller'    => 'admin/aduanDinas',
+                //     'icon'          => 'fa-home',
+                // ),
+                // array(
+                //     'label'         => 'Selesai',
+                //     'controller'    => 'admin/aduanDinas',
+                //     'icon'          => 'fa-home',
+                // ),
+                array(
+                    'label'         => 'Dinas',
+                    'controller'    => 'admin/EksekusiDinas',
+                    'icon'          => 'fa-home',
+                ),
+                array(
+                    'label'         => 'Data Master',
+                    'controller'    => '#master',
+                    'icon'          => 'fa-home',
+                    'child'         => array(
+                        array(
+                            'label'     => 'Karyawan',
+                            'controller' => 'admin/karyawan',
+                            'icon'          => 'fa-home',
+                        ),
+                        array(
+                            'label'     => 'Dinas',
+                            'controller' => 'admin/dinas',
+                            'icon'          => 'fa-home',
+                        ),
+                    )
+                ),
+                array(
+                    'label'         => 'Hak Akses',
+                    'controller'    => '#akses',
+                    'icon'          => 'fa-home',
+                    'child'         => array(
+                        array(
+                            'label'     => 'Group Akses',
+                            'controller' => 'admin/aksesGroup',
+                        ),
+                        array(
+                            'label'     => 'Modul Akses',
+                            'controller' => 'admin/aksesModul',
+                        ),
+                        array(
+                            'label'     => 'User Akses',
+                            'controller' => 'admin/aksesUser',
+                        ),
+                    )
+                ),
+            );
+        }
+
         return $list_menu;
     }
 }
